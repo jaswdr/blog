@@ -1,0 +1,71 @@
+# Your experiences
+experiences:
+- designation: System Development Engineer
+  company:
+    name: Amazon Web Services
+    url: "https://aws.amazon.com"
+    location: Dublin, Ireland
+    # company overview
+    overview: Amazon Web Services offers a broad set of global cloud-based products including compute, storage, databases, analytics, networking, mobile, developer tools, management tools, IoT, security, and enterprise applications.
+  start: Mar 2020
+  # don't provide end date if you are currently working there. It will be replaced by "Present"
+  # end: Dec 2020
+  # give some points about what was your responsibilities at the company.
+  responsibilities:
+  -  Develop internal workflow tools to handle hundreds of thousands of devices each day
+  - Improve observability of running services
+  - Mitigate and remediate errors in projects to unblock customers
+  - Create tools to make the team move fast
+  - Work on internal campaigns to migrate legacy code
+
+- designation: Software Engineer
+  company:
+    name: Pantacor
+    url: "https://www.pantahub.com/"
+    location: England, UK
+    overview: We use container technology to make the development, deployment and management of firmware on Linux devices as simple as it has ever been.
+  start: Feb 2019
+  end: Mar 2020
+  responsibilities:
+  - Improve a Linux devices management platform
+  - Maintain infrastructure in a hybrid cloud kubernetes cluster
+  - Refactor current projects to improve performance
+  - Lead development of new features
+  - Monitor applications to avoid applications outages
+  - Get metrics from running applications for real time analyses
+  - Create unit tests to improve code base quality
+  - Find and fix bugs in code base
+
+- designation: Software Engineer
+  company:
+    name: Eventials
+    url: "https://www.eventials.com/"
+    location: São Paulo, Brazil
+    overview: Complete webinars solution for you to train people, capture leads and broadcast live events with agility and economy.
+  start: Jun 2018
+  end: Feb 2019
+  responsibilities:
+  - Building and maintaining live-streaming and video on demand products.
+  - Building, test and deploying scalable, highly available and modular software products.
+  - Stress-test server code to validate code changes.
+  - Modify existing software to correct errors, adapt to new hardware and improve performance.
+  - Develop code fixes and enhancements for inclusion in future code releases and patches.
+  - Collaborate with product management to design, build and test systems.
+  - Created a live-streaming product who runs on Raspberry Pi for health market.
+
+- designation: Software Developer
+  company:
+    name: Bludata
+    url: "https://www.bludata.com.br/"
+    location: Blumenau, Brazil
+    overview: Developing solutions for driving schools, dispatchers and automatic backup softwares.
+  start: Sep 2014
+  end: Jun 2018
+  responsibilities:
+  - Modified existing software to correct errors, upgrade interfaces and improve performance.
+  - Directed software design and development while remaining focused on client needs.
+  - Worked effectively with design teams to ensure software solutions elevated client side experience.
+  - Built, tested and deployed scalable, highly available and modular software products.
+  - Worked closely with clients to establish problem specifications and system design.
+  - Migrated legacy projects written in PHP language to Go.
+  - Created a live-streaming and telemetry product who runs on Raspberry Pi for the government.

@@ -1,0 +1,40 @@
+designation: Software Engineer
+
+company:
+  name: Amazon Web Services
+  url: "https://aws.amazon.com/"
+
+summary: "Experienced Software Engineer with vast IT experience. Skills include proficiency in many programming languages, virtualization, analytical thinking and creative problem-solving. Able to apply customer service concepts to IT to improve user experience for clients, employees and administration."
+
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "jonathanschweder@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/jaswdr"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/me/jaswdr"
+
+- name: Twitter
+  icon: "fab fa-twitter"
+  url: "https://twitter.com/jaswdr"
+
+resume: "https://docs.google.com/document/d/e/2PACX-1vQ5u6fxQbbtUyr495NnoZN74M2AbdIA8hvfFaGynfyzD3fAFw9wOnU42Xv5sfv_aoNf3bE19KNskLIe/pub"
+
+softSkills:
+- name: Leadership
+  color: blue
+- name: Team Work
+  color: yellow
+- name: Communication
+  color: pink
+- name: Python
+  color: green
+- name: Linux
+  color: blue
+- name: Cloud
+  color: yellow
