@@ -1,0 +1,7 @@
+{{ $pageurl := .Permalink }}
+
+<strong>Share on: </strong>
+<a title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u={{ $pageurl }}');" href="#">Facebook</a> |
+<a title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status={{ $pageurl }}');" href="#">Twitter</a> |
+<a title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ $pageurl }}&title=&summary=&source=');" href="#">Linkedin</a> |
+<a class="mail" title="Share this through Email" onclick="window.open('mailto:?&body={{ $pageurl }}');" href="#">Mail</a>

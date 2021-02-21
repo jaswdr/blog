@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<h1>{{ .Title }}</h1>
+{{ end }}{{ end }}
+{{ partial "share-buttons.html" . }}
+<p>
+{{ .Description }}
+</p>
+{{ with .TableOfContents }}
+<aside>
+  <h3>Table of Contents</h3>
+  {{ . }}
+</aside>
+<hr>
+{{ end }}
+<content>
+  {{ .Content }}
+</content>
+<p>
+  {{ range (.GetTerms "tags") }}
+  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+<h3>See Also</h3>
+<ul>
+  {{ range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}
+{{ partial "share-buttons.html" . }}
+{{ template "_internal/disqus.html" . }}
+{{ end }}

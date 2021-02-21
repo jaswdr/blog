@@ -4,9 +4,9 @@ SysDE at AWS with vast IT experience. Skills include proficiency in many program
 
 [My Resume](https://docs.google.com/document/d/e/2PACX-1vQ5u6fxQbbtUyr495NnoZN74M2AbdIA8hvfFaGynfyzD3fAFw9wOnU42Xv5sfv_aoNf3bE19KNskLIe/pub)
 
-[Email](mailto:jonathanschweder@gmail.com)
-[Github](https://github.com/jaswdr)
-[Linkedin](https://www.linkedin.com/in/jaswdr/)
+[Email](mailto:jonathanschweder@gmail.com) |
+[Github](https://github.com/jaswdr) |
+[Linkedin](https://www.linkedin.com/in/jaswdr/) |
 [Twitter](https://twitter.com/jaswdr)
 
 ---
@@ -14,9 +14,12 @@ SysDE at AWS with vast IT experience. Skills include proficiency in many program
 # Experience
 
 ## Amazon Web Services
-####  System Development Engineer (Mar 2020 - Present, Dublin, Ireland)
+####  System Development Engineer 
+<sub>Mar 2020 - Present, Dublin, Ireland</sub>
 
+<cite>
 Amazon Web Services offers a broad set of global cloud-based products including compute, storage, databases, analytics, networking, mobile, developer tools, management tools, IoT, security, and enterprise applications.
+</cite>
 
 ### Responsabilities:
 - Develop internal workflow tools to handle hundreds of thousands of devices every day
@@ -26,9 +29,12 @@ Amazon Web Services offers a broad set of global cloud-based products including 
 - Work on internal campaigns to migrate legacy code
 
 ## Pantacor
-#### Software Engineer (Feb 2019 - Mar 2020 , England, UK)
+#### Software Engineer
+<sub>Feb 2019 - Mar 2020 , England, UK<sub>
 
+<cite>
 We use container technology to make the development, deployment and management of firmware on Linux devices as simple as it has ever been.
+</cite>
 
 ### Responsibilities:
 
@@ -42,9 +48,12 @@ We use container technology to make the development, deployment and management o
 - Find and fix bugs in code base
 
 ## Eventials
-#### Software Engineer (Jun 2018 - Feb 2019 , São Paulo, Brazil)
+#### Software Engineer
+<sub>Jun 2018 - Feb 2019 , São Paulo, Brazil</sub>
 
+<cite>
 Complete webinars solution for you to train people, capture leads and broadcast live events with agility and economy.
+</cite>
 
 ### Responsibilities:
 
@@ -58,9 +67,12 @@ Complete webinars solution for you to train people, capture leads and broadcast 
 
 ## Bludata
 
-#### Software Developer (Sep 2014 - Jun 2018 , Blumenau, Brazil)
+#### Software Developer
+<sub>Sep 2014 - Jun 2018 , Blumenau, Brazil</sub>
 
+<cite>
 Developing solutions for driving schools, dispatchers and automatic backup softwares.
+</cite>
 
 ### Responsibilities:
 
