@@ -553,7 +553,7 @@ Know that we saw how to do simple queries you can think that maybe this is not m
 
 So, to do complex queries using S3 we have a bunch of alternatives, but in my opinion the best solution involves two other AWS services, **AWS Lambda** and **Amazon SNS**. Those two services can be used for complex data analysis by sending S3 events to a SNS topic, events like when we putting and deleting objects, processing them using Lambda functions, where we can process the data and generate the results we want, below you can see the architecture to do this.
 
-{{< figure src="/images/s3-sns-lambda.jpg" title="Processing S3 events with SNS and Lambda" alt="diagram" width="509" height="362" >}}
+{{< image src="https://raw.githubusercontent.com/jaswdr/diagrams/master/s3-event-processing-with-sns-and-lambda.jpg" title="Processing S3 events with SNS and Lambda" alt="diagram" width="699" height="605" >}}
 
 This is just one way to use it, some other alternatives is using SQS or even Kinesis for more complex scenarios.
 
