@@ -21,7 +21,7 @@ If you check the alternative that we have available for SQL and NoSQL database, 
 
 In the other hand we have NoSQL databases, where we have alternatives that were built for specific problems, from Wide-Colummn to Graph. Each NoSQL alternative has its own way to manage data, but all of them have limitations in the way you retrieve data, and thats normally is a consequence by the way the database was built, or the purpose for what it was built. But what all of them have in common is that NoSQL database were built for compute optimization and not storage optimization, this means that when using a NoSQL database you need to be more tolerant about duplication of data, sometimes you need to duplicate your records in favor of performance.
 
-> Important! Don't think that NoSQL databases will replace SQL ones, both have different purposes and each one have it own use case.
+> :exclamation: Don't think that NoSQL databases will replace SQL ones, both have different purposes and each one have it own use case.
 
 So why use Amazon S3 as a NoSQL database? To answer this question we need to think about the advantages and disadvantages of S3.
 
