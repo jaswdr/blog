@@ -17,11 +17,11 @@ comments = true
 
 ## Why Amazon S3?
 
-If you check the alternative that we have available for SQL and NoSQL database, both of them have some problems. For SQL databases the problem is scalability, you can of course use them for a lot of applications, they give you flexibility when you want to retrieve your records, but when you go to big databases, starting with some hundreds of Terabytes of data, you will start to see problems related to performance soon or not, and that will happen with all SQL database simpely because SQL databases where created for storage optimization and not compute optimization. Something that was "OK" some years ago when the most expensive part of a datacenter was the storage, but today this phrase is not more true.
+If you check the alternative that we have available for SQL and NoSQL database, both of them have some problems. For SQL databases the problem is scalability, you can of course use them for a lot of applications, they give you flexibility when you want to retrieve your records, but when you go to big databases, starting with some hundreds of Terabytes of data, you will start to see problems related to performance soon or not, and that will happen with all SQL database simply because SQL databases where created for storage optimization and not compute optimization. Something that was "OK" some years ago when the most expensive part of a datacenter was the storage, but today this phrase is not more true.
 
-In the other hand we have NoSQL databases, where we have alternatives that were built for specific problems, from Wide-Colummn to Graph. Each NoSQL alternative has its own way to manage data, but all of them have limitations in the way you retrieve data, and thats normally is a consequence by the way the database was built, or the purpose for what it was built. But what all of them have in common is that NoSQL database were built for compute optimization and not storage optimization, this means that when using a NoSQL database you need to be more tolerant about duplication of data, sometimes you need to duplicate your records in favor of performance.
+In the other hand we have NoSQL databases, where we have alternatives that were built for specific problems, from Wide-Column to Graph. Each NoSQL alternative has its own way to manage data, but all of them have limitations in the way you retrieve data, and thats normally is a consequence by the way the database was built, or the purpose for what it was built. But what all of them have in common is that NoSQL database were built for compute optimization and not storage optimization, this means that when using a NoSQL database you need to be more tolerant about duplication of data, sometimes you need to duplicate your records in favour of performance.
 
-> :exclamation: Don't think that NoSQL databases will replace SQL ones, both have different purposes and each one have it own use case.
+> :exclamation: Don't think that NoSQL databases will replace SQL ones, both have different purposes and each one have its own use case.
 
 So why use Amazon S3 as a NoSQL database? To answer this question we need to think about the advantages and disadvantages of S3.
 
@@ -44,11 +44,11 @@ So why use Amazon S3 as a NoSQL database? To answer this question we need to thi
 1. Expensive if you don't know what you are doing
 1. Eventual consistency
 
-As we can see, even S3 is not a silver bullet, it has limitations, some of those limitations can make unfeasible  the use for your project, and that is perfectly fine, you know your project and you know what works and what not. But the fact is that for a lot of project it can work, specially with projects where the biggest problem are managing of the database itself, proper scaling, keeping it updated to avoid security risks and many others. Of course you project should also be tolerant to eventual consistency, not requiring transactions or complex queries, if thats apply to your project, you can probably use S3 as a database, so lets see how we can do the most common operations.
+As we can see, even S3 is not a silver bullet, it has limitations, some of those limitations can make unfeasible  the use for your project, and that is perfectly fine, you know your project and you know what works and what not. But the fact is that for a lot of project it can work, especially with projects where the biggest problem are managing of the database itself, proper scaling, keeping it updated to avoid security risks and many others. Of course you project should also be tolerant to eventual consistency, not requiring transactions or complex queries, if that apply to your project, you can probably use S3 as a database, so lets see how we can do the most common operations.
 
 ## Glossary
 
-Amazon S3 has a bunch of terms that are used to define different things, like **Buckets** who are logical spaces that can have zero or more **Objects**, who can be anything from text to binary. Each object needs to have a **Key**, something that is unique within the bucket, we can never have two or more objects with the same key and its with the key that we retrieve the objects.
+Amazon S3 has a bunch of terms that are used to define different things, like **Buckets** who are logical spaces that can have zero or more **Objects**, who can be anything from text to binary. Each object needs to have a **Key**, something that is unique within the bucket, we can never have two or more objects with the same key and it's with the key that we retrieve the objects.
 
 ## Comparing S3 Operations with SQL and NoSQL equivalents
 
@@ -86,7 +86,7 @@ client = boto3.client('s3')
 
 This client will be the one used in all examples below.
 
-> Notice: I'm considering that you already have installed the [aws](https://aws.amazon.com/cli/) CLI tool and configured your account credentials in your `~/.aws/config` file.
+> :exclamation: I'm considering that you already have installed the [aws](https://aws.amazon.com/cli/) CLI tool and configured your account credentials in your `~/.aws/config` file.
 
 ## Creating a Bucket
 
@@ -153,7 +153,7 @@ pprint(response)
                           'RetryAttempts': 0}}
 
 
-Again the important part is the `"HTTPStatusCode"` equals `200` to confirm that the operation was a success. Remember that if the `Key` already exists the Object is overwritten, that's how you do updates, if you use an existing key you will loose the previous state of the object unless you have the versioning enabled for your bucket.
+Again the important part is the `"HTTPStatusCode"` equals `200` to confirm that the operation was a success. Remember that if the `Key` already exists the Object is overwritten, that's how you do updates, if you use an existing key you will lose the previous state of the object unless you have the versioning enabled for your bucket.
 
 ## Getting Objects
 
@@ -241,7 +241,7 @@ pprint(response)
                           'RetryAttempts': 0}}
 
 
-We can extract som useful informations from the response:
+We can extract some useful information from the response:
 
 - **Contents**: Contains the returned list of keys, each item in this list contains useful informations like the `Key`, `Size` and `StorageClass` of the Object.
 - **KeyCount**: Contains the number of items returned.
@@ -456,7 +456,7 @@ pprint(response)
                           'RetryAttempts': 0}}
 
 
-Listing all `admin` users can done in a similar way, this technique is basically how you create a "index", of course you can use this with multiple attributes, but because you can only use a prefix when listing you need to respect the sequence, if you use `A`, `B` and `C` attributes and you want to query for `C` you need to pass `A` and `B` too, and there is no wilcard value that you can use.
+Listing all `admin` users can done in a similar way, this technique is basically how you create a "index", of course you can use this with multiple attributes, but because you can only use a prefix when listing you need to respect the sequence, if you use `A`, `B` and `C` attributes and you want to query for `C` you need to pass `A` and `B` too, and there is no wildcard value that you can use.
 
 An alternative is using the `select_object_content`, but it is only possible to use it to query or filter values from the content of one object, this method accept multiple formats for input and output, let's see how it works.
 
@@ -524,7 +524,7 @@ pprint(response)
                           'RetryAttempts': 0}}
 
 
-Something to notice in the response is that the `Payload` returns an `EventStream`, this means we don't get our full response back immeadiatly, we need to interate over this object to get our response, and convert the values back to `dict`.
+Something to notice in the response is that the `Payload` returns an `EventStream`, this means we don't get our full response back immediately, we need to iterate over this object to get our response, and convert the values back to `dict`.
 
 
 ```python
@@ -548,11 +548,11 @@ list(map(json.loads, records))
 
 Here we have our list of records, you can see that it is a bit tricky to convert them back to `dict` objects, but it works as expected.
 
-For small applications this functionality can be enough for most use cases, but again there are some limitations, for example one object cannot be greather than 5TB, also there it is impossible to use this method with big objects, because every time you make a query it will read the entirely object to get all records, you can imagine how expensive this is not only related to how much time it will take, but how much you will pay per read, even so if you thing this will be useful to you take a look in [Amazon Athena](https://aws.amazon.com/athena/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc) for something more flexible and scalable.
+For small applications this functionality can be enough for most use cases, but again there are some limitations, for example one object cannot be greater than 5TB, also there it is impossible to use this method with big objects, because every time you make a query it will read the entirely object to get all records, you can imagine how expensive this is not only related to how much time it will take, but how much you will pay per read, even so if you thing this will be useful to you take a look in [Amazon Athena](https://aws.amazon.com/athena/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc) for something more flexible and scalable.
 
 ## Doing Complex Queries
 
-Know that we saw how to do simple queries you can think that maybe this is not much useful for you project, because you need to do some complex queries like you do in your SQL database, but the truth is that you cannot think that way, you need to understand that you can't use a NoSQL database as a SQL database, those are simpely different use cases, even if you can think that for small applications, you cannot scale it for to long.
+Know that we saw how to do simple queries you can think that maybe this is not much useful for you project, because you need to do some complex queries like you do in your SQL database, but the truth is that you cannot think that way, you need to understand that you can't use a NoSQL database as a SQL database, those are simply different use cases, even if you can think that for small applications, you cannot scale it for too long.
 
 So, to do complex queries using S3 we have a bunch of alternatives, but in my opinion the best solution involves two other AWS services, **AWS Lambda** and **Amazon SNS**. Those two services can be used for complex data analysis by sending S3 events to a SNS topic, events like when we putting and deleting objects, processing them using Lambda functions, where we can process the data and generate the results we want, below you can see the architecture to do this.
 
@@ -562,4 +562,4 @@ This is just one way to use it, some other alternatives is using SQS or even Kin
 
 ## Conclusion
 
-Amazon S3 could be a solution to avoid a bunch of problems that we have when using tradicional or even state of the art databases. It gives you a simple API that is easy to understand, but is still limited, to process more complex data, or generate complex agregations or statistics we need to use different approaches, like using other AWS services that can be easily integrated.
+Amazon S3 could be a solution to avoid a bunch of problems that we have when using traditional or even state of the art databases. It gives you a simple API that is easy to understand, but is still limited, to process more complex data, or generate complex aggregations or statistics we need to use different approaches, like using other AWS services that can be easily integrated.
