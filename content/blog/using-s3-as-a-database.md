@@ -210,7 +210,7 @@ pprint(response)
 
 The `HTTPStatusCode` been equals `200` confirms that the key exists, we can also see the `ContentLength` value been greater than 0 to confirm that the object has some content. If the key don't exist a exception is raised.
 
-```
+```python
 response = client.head_object(Bucket=bucket_name, Key='not-existing-key')
 ```
 
