@@ -37,7 +37,4 @@
 {{ if .Params.share }}
 {{ partial "share-buttons.html" . }}
 {{ end }}
-{{ if .Params.comments }}
-{{ template "_internal/disqus.html" . }}
-{{ end }}
 {{ end }}

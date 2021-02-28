@@ -15,9 +15,6 @@ pygmentsUseClasses=true
 # Google analytics
 googleAnalytics = "UA-173591496-1"
 
-# Disqus config
-disqusShortname = "jaswdr-dev"
-
 # Image processing config
 [imaging]
 # Default resample filter used for resizing. Default is Box,

@@ -12,7 +12,6 @@ tags = [
 draft = false
 toc = true
 share = true
-comments = true
 +++
 
 ## Before we start

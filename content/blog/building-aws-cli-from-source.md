@@ -9,7 +9,6 @@ tags = [
 draft = false
 toc = false
 share = true
-comments = true
 +++
 
 Installing `aws` CLI tool from source:
