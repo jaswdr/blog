@@ -79,12 +79,12 @@ $ python3 -c "import boto3; print('OK')"
 
 To start making calls we need a S3 client, we can create one using the `boto3.client` method.
 
-{{< highlight python "linenos=inline" >}}
+```python
 from pprint import pprint # used for better printing values
 import boto3
 
 client = boto3.client('s3')
-{{< / highlight >}}
+```
 
 This client will be the one used in all examples below.
 
