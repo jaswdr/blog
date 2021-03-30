@@ -4,22 +4,12 @@ on: push
 
 jobs:
   hugo:
-    name: Hugo build
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
-      - name: Run Linter
-        uses: github/super-linter@v3
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Run Hugo setup
-        uses: peaceiris/actions-hugo@v2.4.13
-        with:
-          hugo-version: latest # optional, default is latest
-          extended: true # optional, default is false
+      - name: Hugo Build
+        uses: jakejarvis/hugo-build-action@90a6d4905b03f9462d03e75066b19cf39b2bd47b
         
