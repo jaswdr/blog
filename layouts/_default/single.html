@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ if eq .Type "blog" }}{{ if not .Params.menu }}
-<h1>{{ .Title }} {{ partial "page-hits.html" . }}</h1>
+<h1>{{ .Title }}</h1>
 {{ end }}{{ end }}
 {{ if .Params.share }}
 {{ partial "share-buttons.html" . }}
