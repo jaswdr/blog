@@ -11,7 +11,7 @@ toc = false
 share = true
 +++
 
-Installing `aws` CLI tool from source:
+Installing **aws** CLI tool from source:
 
 ```bash
 git clone --depth=1 https://github.com/aws/aws-cli.git
