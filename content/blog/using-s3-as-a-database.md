@@ -77,7 +77,7 @@ $ python3 -c "import boto3; print('OK')"
 
 ## Creating a S3 Client
 
-To start making calls we need a S3 client, we can create one using the `boto3.client` method.
+To start making calls we need a S3 client, we can create one using the **boto3.client** method.
 
 ```python
 from pprint import pprint # used for better printing values
@@ -88,11 +88,11 @@ client = boto3.client('s3')
 
 This client will be the one used in all examples below.
 
-> :exclamation: I'm considering that you already have installed the [aws](https://aws.amazon.com/cli/) CLI tool and configured your account credentials in your `~/.aws/config` file. If not check [this](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) page to see how you can do it.
+> :exclamation: I'm considering that you already have installed the [aws](https://aws.amazon.com/cli/) CLI tool and configured your account credentials in your **aws/config** file. If not check [this](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) page to see how you can do it.
 
 ## Creating a Bucket
 
-Every call related to object needs to be related to a bucket, a bucket could be considered our database or depending of the way you model, a bucket can be our table, to create a new one we can use the `create_bucket` method.
+Every call related to object needs to be related to a bucket, a bucket could be considered our database or depending of the way you model, a bucket can be our table, to create a new one we can use the **create_bucket** method.
 
 
 ```python
@@ -101,7 +101,6 @@ response = client.create_bucket(
     Bucket=bucket_name,
     CreateBucketConfiguration={'LocationConstraint': 'eu-west-1'})
 pprint(response)
-```
 
     {'Location': 'http://jaswdr-tutorial-s3.s3.amazonaws.com/',
      'ResponseMetadata': {'HTTPHeaders': {'content-length': '0',
@@ -114,13 +113,14 @@ pprint(response)
                           'HostId': 'BzorIpOFL4xUK1fYD4y2qtrtRTn/l+by35GX6LSw2Hj6IA2OmXv4HeIQ51NM5kDFZKjIwf9ZIt8=',
                           'RequestId': '137F63660DCEC22D',
                           'RetryAttempts': 0}}
+```
 
 
-The important part of the response is first the `"Location"` who will be the HTTP endpoint of our bucket and the `"HTTPStatusCode"` who needs to be `200`, confirming that the bucket was created successfully
+The important part of the response is first the **Location** who will be the HTTP endpoint of our bucket and the **HTTPStatusCode** who needs to be **200** confirming that the bucket was created successfully
 
 ## Creating or Updating Objects
 
-One of the fundamental operations that we need to do in any database is insert or update our records, to do that with objects in a bucket we can use the `put_object` method, keep in mind that if the `Key` that you pass exists the content of the object will be replaced, if not it will be created.
+One of the fundamental operations that we need to do in any database is insert or update our records, to do that with objects in a bucket we can use the **put_object** method, keep in mind that if the **Key** that you pass exists the content of the object will be replaced, if not it will be created.
 
 
 ```python
@@ -140,7 +140,6 @@ response = client.put_object(
     Key=new_user_key,
     Body=new_user_body)
 pprint(response)
-```
 
     {'ETag': '"d6c4952c62396e15a1b6cf2a07dc9fa4"',
      'ResponseMetadata': {'HTTPHeaders': {'content-length': '0',
@@ -153,13 +152,14 @@ pprint(response)
                           'HostId': 'XEnCXl3YvbLmYm8GT6RI+JXsc7jv2InNtonok9mH4IUd4vr/akq4V0kqox+34OXM3WaVHnTsX4I=',
                           'RequestId': 'D741AF4D35092431',
                           'RetryAttempts': 0}}
+```
 
 
-Again the important part is the `"HTTPStatusCode"` equals `200` to confirm that the operation was a success. Remember that if the `Key` already exists the Object is overwritten, that's how you do updates, if you use an existing key you will lose the previous state of the object unless you have the versioning enabled for your bucket, this is an interesting feature available in S3 that can be used to check the history of a object.
+Again the important part is the **HTTPStatusCode** equals **200** to confirm that the operation was a success. Remember that if the **Key** already exists the Object is overwritten, that's how you do updates, if you use an existing key you will lose the previous state of the object unless you have the versioning enabled for your bucket, this is an interesting feature available in S3 that can be used to check the history of a object.
 
 ## Getting Objects
 
-Once you have added an object, you can retrieve it by the `Key` using the `get_object` method.
+Once you have added an object, you can retrieve it by the **Key** using the **get_object** method.
 
 
 ```python
@@ -177,13 +177,12 @@ The response body will contains the content of our user previously created.
 
 ## Checking Existence of Keys
 
-There are times where you need to check the existence of a key, to do so you can use the `head_object` method.
+There are times where you need to check the existence of a key, to do so you can use the **head_object** method.
 
 
 ```python
 response = client.head_object(Bucket=bucket_name, Key=new_user_key)
 pprint(response)
-```
 
     {'AcceptRanges': 'bytes',
      'ContentLength': 50,
@@ -205,13 +204,13 @@ pprint(response)
                           'HostId': 'NiNW1wyaC0yAzdt+DjR8L6DUAFyJQtq6LUaYWeUzncRQZu1v1fra26utXEa6sogZIlPW76HXq5Y=',
                           'RequestId': '7F350ECC0500E8CF',
                           'RetryAttempts': 0}}
+```
 
 
-The `HTTPStatusCode` been equals `200` confirms that the key exists, we can also see the `ContentLength` value been greater than 0 to confirm that the object has some content. If the key don't exist a exception is raised.
+The **HTTPStatusCode** been equals **200** confirms that the key exists, we can also see the **ContentLength** value been greater than 0 to confirm that the object has some content. If the key don't exist a exception is raised.
 
 ```python
 response = client.head_object(Bucket=bucket_name, Key='not-existing-key')
-```
 
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
@@ -220,16 +219,16 @@ response = client.head_object(Bucket=bucket_name, Key='not-existing-key')
       File "/usr/local/lib/python3.9/site-packages/botocore/client.py", line 676, in _make_api_call
         raise error_class(parsed_response, operation_name)
     botocore.exceptions.ClientError: An error occurred (404) when calling the HeadObject operation: Not Found
+```
 
 ## Listing Objects
 
-If you need to get a list of keys you can use the `list_objects_v2` method.
+If you need to get a list of keys you can use the **list_objects_v2** method.
 
 
 ```python
 response = client.list_objects_v2(Bucket=bucket_name)
 pprint(response)
-```
 
     {'Contents': [{'ETag': '"d6c4952c62396e15a1b6cf2a07dc9fa4"',
                    'Key': 'user_foo.json',
@@ -253,14 +252,15 @@ pprint(response)
                           'HostId': 'cvXe5alJ6ngmDS2v0ihkR8ZYe0VbRZDb8atbglkQeVd0LNqMb+rJvUKIageI0KLrBe/c0zo1wro=',
                           'RequestId': '1B8C5977DBBC50D1',
                           'RetryAttempts': 0}}
+```
 
 
 We can extract some useful information from the response:
 
-- **Contents**: Contains the returned list of keys, each item in this list contains useful informations like the `Key`, `Size` and `StorageClass` of the Object.
+- **Contents**: Contains the returned list of keys, each item in this list contains useful informations like the **Key**, **Size** and **StorageClass** of the Object.
 - **KeyCount**: Contains the number of items returned.
 
-Something that is important to keep in mind when using the list method is that there is a limit in the number of objects returned, by default if you don't set the parameter `MaxKeys` it will return 1000 items. Let see how we can use this parameter, but first we need to insert some new items.
+Something that is important to keep in mind when using the list method is that there is a limit in the number of objects returned, by default if you don't set the parameter **MaxKeys** it will return 1000 items. Let see how we can use this parameter, but first we need to insert some new items.
 
 
 ```python
@@ -288,7 +288,6 @@ response1 = client.list_objects_v2(
     Bucket=bucket_name,
     MaxKeys=3)
 pprint(response1)
-```
 
     {'Contents': [{'ETag': '"d6c4952c62396e15a1b6cf2a07dc9fa4"',
                    'Key': 'user_foo.json',
@@ -323,9 +322,10 @@ pprint(response1)
                           'HostId': 'YTECk2v6WSLf01/StGfZLjgHcJfiPu5Gs2DRkMtq3gV0JJBAbTBBCS+HNzYSW7nQ9AHFbk+vnos=',
                           'RequestId': '2EFA458AA3954C96',
                           'RetryAttempts': 0}}
+```
 
 
-As we can see the response has just 3 items, to retrieve the next 3 items we need to use the `NextContinuationToken` token value in a new call.
+As we can see the response has just 3 items, to retrieve the next 3 items we need to use the **NextContinuationToken** token value in a new call.
 
 
 ```python
@@ -334,7 +334,6 @@ response2 = client.list_objects_v2(
     MaxKeys=3,
     ContinuationToken=response1['NextContinuationToken'])
 pprint(response2)
-```
 
     {'Contents': [{'ETag': '"0a8cb3ea06c2de8aa09118ee96261df5"',
                    'Key': 'user_foo_10.json',
@@ -370,13 +369,14 @@ pprint(response2)
                           'HostId': 'gMPdFJhPjoJDZgNfAtoBML33FlzpUp03J3Qs6jtkDESDeOmF+AWiXPEKI7p5lrDw7SFLTkEH0V8=',
                           'RequestId': 'EF68EAFEACD58359',
                           'RetryAttempts': 0}}
+```
 
 
-We can see that the items in the response changed, if we keep using the `NextContinuationToken` of each response in the next request it will be possible to list all the Objects in our bucket.
+We can see that the items in the response changed, if we keep using the **NextContinuationToken** of each response in the next request it will be possible to list all the Objects in our bucket.
 
 ## Deleting Objects
 
-For deletion we can use the `delete_object` method.
+For deletion we can use the **delete_object** method.
 
 
 ```python
@@ -384,7 +384,6 @@ response = client.delete_object(
     Bucket=bucket_name,
     Key='user_foo.json')
 pprint(response)
-```
 
     {'ResponseMetadata': {'HTTPHeaders': {'date': 'Sun, 21 Feb 2021 21:10:45 GMT',
                                           'server': 'AmazonS3',
@@ -394,15 +393,16 @@ pprint(response)
                           'HostId': 'JaObHepZthp4FWGQip1RtGpVhFljg5Z53R9qBvcnp29L2R24cYwTHSkpVgwhtzxjRYvJ1DQRRz8=',
                           'RequestId': 'EB43577F06FE2C49',
                           'RetryAttempts': 0}}
+```
 
 
 Something important to notice is that the deletion of objects will succeed even if the object key don't exist, this is probably a consequence of the "eventual consistency" of S3.
 
 ## Using Simple Queries
 
-Going to one of the most interesting part, a common operation when using any database is the ability to query to retrieve items that meet a criteria. In SQL databases you use the `SELECT` statement for that, in NoSQL database we have different ways to do it.
+Going to one of the most interesting part, a common operation when using any database is the ability to query to retrieve items that meet a criteria. In SQL databases you use the **SELECT** statement for that, in NoSQL database we have different ways to do it.
 
-In S3 we don't have much flexibility for retrieving objects, we can use the list methods to retrieve objects keys, the key can be something like the `id` of the object. But when we want to filter objects by some attribute we have basically two options, first is to add the attribute in the key of the object, so we can use the `Prefix`  parameter in the `list_objects_v2` method, like the example below, where we are creating a `role` attribute for our user object.
+In S3 we don't have much flexibility for retrieving objects, we can use the list methods to retrieve objects keys, the key can be something like the **id** of the object. But when we want to filter objects by some attribute we have basically two options, first is to add the attribute in the key of the object, so we can use the **Prefix**  parameter in the **list_objects_v2** method, like the example below, where we are creating a **role** attribute for our user object.
 
 
 ```python
@@ -425,7 +425,7 @@ for i in range(10):
         Body=new_user_body)
 ```
 
-Listing all users with `"user"` role.
+Listing all users with **"user"** role.
 
 
 ```python
@@ -434,7 +434,6 @@ response = client.list_objects_v2(
     Prefix='user_user',
     MaxKeys=3)
 pprint(response)
-```
 
     {'Contents': [{'ETag': '"62a9301ddbdfa1c20ace0182d8a6f812"',
                    'Key': 'user_user_foo_0.json',
@@ -468,11 +467,12 @@ pprint(response)
                           'HostId': 'eaPlf3Dq4aE/CqQdbdE0o4Q+hvE9wjJp+Q3BCWMfqDwy+Rs9LU51UYxGTpmNuD3ycd+oNaL8L/4=',
                           'RequestId': 'A184913E7A137123',
                           'RetryAttempts': 0}}
+```
 
 
-Listing all `admin` users can done in a similar way, this technique is basically how you create a "index", of course you can use this with multiple attributes, but because you can only use a prefix when listing you need to respect the order, if you use `A`, `B` and `C` attributes and you want to query for `C` you need to pass `A` and `B` too, and there is no wildcard value that you can use or even regex.
+Listing all **admin** users can done in a similar way, this technique is basically how you create a "index", of course you can use this with multiple attributes, but because you can only use a prefix when listing you need to respect the order, if you use **A**, **B** and **C** attributes and you want to query for **C** you need to pass **A** and **B** too, and there is no wildcard value that you can use or even regex.
 
-The second way to query objects by attributes is using the `select_object_content`, but it is only possible to use it to query or filter values from the content of only one object, this method accept multiple formats for input and output, let's see how it works, but first let create a list of users.
+The second way to query objects by attributes is using the **select_object_content**, but it is only possible to use it to query or filter values from the content of only one object, this method accept multiple formats for input and output, let's see how it works, but first let create a list of users.
 
 
 ```python
@@ -493,10 +493,6 @@ client.put_object(
     Bucket=bucket_name,
     Key='users.json',
     Body=users)
-```
-
-
-
 
     {'ResponseMetadata': {'RequestId': '0089E45C25479B03',
       'HostId': 'T+Yj8L3GDMepwDwPOv0zW0A63I0W+bLFLJf3zKRf/C8UKwVHE8QQ2zng4na9u9fIzPRzR472Qyg=',
@@ -509,10 +505,11 @@ client.put_object(
        'server': 'AmazonS3'},
       'RetryAttempts': 0},
      'ETag': '"d190d44ff783594b52c4d28f9f296596"'}
+```
 
 
 
-This will generate a list of users in the `users.json` key, now we can query it.
+This will generate a list of users in the **users.json** key, now we can query it.
 
 
 ```python
@@ -524,7 +521,6 @@ response = client.select_object_content(
     InputSerialization={"JSON": {"Type": "Document"}},
     OutputSerialization={"JSON": {}})
 pprint(response)
-```
 
     {'Payload': <botocore.eventstream.EventStream object at 0x10720f580>,
      'ResponseMetadata': {'HTTPHeaders': {'date': 'Sun, 21 Feb 2021 21:10:46 GMT',
@@ -536,19 +532,16 @@ pprint(response)
                           'HostId': 'RbjooT13midyPl1BRRB5ll2YZegG3/nkOgo9q84KeKePLn3rZf08wJfGuD99JmY4FBAwTYupTTE=',
                           'RequestId': 'DD9DCCECA680CC81',
                           'RetryAttempts': 0}}
+```
 
 
-Something to notice in the response is that the `Payload` returns an `EventStream`, this means we don't get our full response back immediately, we need to iterate over this object to get our response, and convert the values back to `dict`.
+Something to notice in the response is that the **Payload** returns an **EventStream**, this means we don't get our full response back immediately, we need to iterate over this object to get our response, and convert the values back to **dict**.
 
 
 ```python
 payload = list(response['Payload'])[0]['Records']['Payload']
 records = payload.decode('utf-8').strip().split('\n')
 list(map(json.loads, records))
-```
-
-
-
 
     [{'id': 0, 'username': 'foo_0', 'role': 'admin', 'password': 'secret'},
      {'id': 3, 'username': 'foo_3', 'role': 'admin', 'password': 'secret'},
@@ -557,10 +550,11 @@ list(map(json.loads, records))
      {'id': 6, 'username': 'foo_6', 'role': 'admin', 'password': 'secret'},
      {'id': 7, 'username': 'foo_7', 'role': 'admin', 'password': 'secret'},
      {'id': 9, 'username': 'foo_9', 'role': 'admin', 'password': 'secret'}]
+```
 
 
 
-It works! and you can see that it is a bit tricky to convert them back to `dict` objects, but the filtering works as expected.
+It works! and you can see that it is a bit tricky to convert them back to **dict** objects, but the filtering works as expected.
 
 ## Doing Complex Queries
 

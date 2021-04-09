@@ -6,7 +6,6 @@ draft = false
 toc = true
 comments = false
 +++
-## [vim](https://github.com/vim/vim)
 
 Config:
 - [.vimrc](https://gist.github.com/jaswdr/0de529f2b23a3409b632384d206c833d)
