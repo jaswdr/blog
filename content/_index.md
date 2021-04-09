@@ -27,6 +27,7 @@ Amazon Web Services offers a broad set of global cloud-based products including 
 - Mitigate and remediate errors in projects to unblock customers
 - Create tools to make the team move fast
 - Work on internal campaigns to migrate legacy code
+- Build tools to reduce team Ops load and improve services reliability
 
 ## Pantacor
 #### Software Engineer
