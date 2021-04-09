@@ -12,11 +12,13 @@ toc = true
 share = true
 +++
 
-When working at any software, as a developer, you need to know what is going to be delivered to production, for our source code base we use things like `git` to track changes, keep a history, review and revert when needed. But when we talk about resources in our cloud provider, this task is not easy, sometimes because we are lazy and don't want to use tool X or Y, because it is to much complicated and we are trying to solve something simple as quickly as possible, so we do it manually, and when we take notice our account is a mess, with a lot of resources that we don't use anymore and the only time that we notice that they exist is when your boss complains about the cost.
+When working at any software, as a developer, you need to know what is going to be delivered to production, for our application code base we use things like `git` to track changes, keep a history, review and revert if needed. But when we talk about infrastructure resources in our cloud provider, this task is not easy, sometimes because the provider doesn't have a good API or the tools doesn't give us what we need, other times is because it is to much complicated and we are trying to solve something simple as quick as possible, so we do it manually. After doing this a couple of times our account is a mess, with a lot of resources that we don't use anymore and the we only notice that they exist when our manager complains about the bill.
 
-For problems like that that the AWS Cloudformation was created, a single interface that can be used for any developer to describe the desired state of your resources. But even that sometimes is too complicate, to much verbose, or even limited by been static, making us copy and pasting a lot of sections of the bigger definition file.
+In AWS the service that can solve this kind of issue is Cloudformation. A single interface that can be used to describe the desired state of your resources. But even that sometimes is too complicated, to much verbose, or even limited by been static, making us copying and pasting a lot of sections of the big definition file.
 
-Now thats why **CDK** was created, a collection of libraries in different languages that can been used to define your infrastructure as code, taking all the advantages of imperative programming languages, with the existing workflows that were already defined for applications softwares. Let see in this tutorial how you can use the **CDK** to create a Webcrawler Python application.
+Now thats why **CDK** was created, a collection of libraries in different languages that can been used to define your infrastructure as code, combining all the advantages of imperative programming languages with the existing workflows that we already defined for our applications.
+
+Let see in this tutorial how you can use the **CDK** tool to manage your infrastructure using Python, demonstrating the use in a "Webcrawler" service.
 
 ## TL;DR
 
@@ -24,17 +26,19 @@ See the final result at https://github.com/jaswdr/aws-cdk-crawler-backend-exampl
 
 ## Architecture
 
-What we will built in this tutorial is a webcrawler application for apartment rent prices in Dublin city, using different services from the AWS cloud provider, see the full picture of the architecture below:
+As mentioned before, what we will built in this tutorial is a webcrawler application, more specifically for apartment rent prices in Dublin city, Ireland. The application will use different services from the AWS cloud provider. See the full picture of the architecture below:
 
-![Rent Price Webcrawler](https://raw.githubusercontent.com/jaswdr/diagrams/master/rent-price-webcrawler.jpg)
+{{< image src="https://raw.githubusercontent.com/jaswdr/diagrams/master/rent-price-webcrawler.jpg" title="Rent Price Webcrawler Architecture" alt="diagram" width="679" height="1450" >}}
 
-In the example above I'm using a bunch of different AWS services, everything starts with the `Cron`, who is a Eventbridge cron event that will determine the frequency which we collect the page. This item will trigger the `Crawler` lambda function, who will collect the page, extract the data and save it to `DynamoDB`, then send it to a SQS queue. The SQS queue will have at this point one listener, our `Enrichment` lambda, this lambda is responsabile to add more specialized data, like distance to know points in the map.
+In the example above, the process starts with the `Cron`, who will be a Eventbridge cron event, who will determine the frequency which we collect the page. This then will trigger the `Crawler` lambda function, who will collect the page, extract the data, save it to a `DynamoDB` table and send it at the same time to a SQS queue. The SQS queue will have one listener, our `Enrichment` lambda, this lambda will add more specialized data, for example, the distance from the apartment to the [Spire of Dublin](https://www.google.com/maps/place/Spire+of+Dublin,+North+City,+Dublin/@53.3498091,-6.2624435,17z/data=!3m1!4b1!4m5!3m4!1s0x48670e843e66bd41:0x4978811bdf0f9af7!8m2!3d53.3498091!4d-6.2602549) in the city centre.
 
-Now considering that someone will use this solution, the user will access a webpage that in this case will be hosted by our `Frontend` in Amplify, it will be a simple page that will list all the offers and have some filters, like number of bedrooms and number of bathrooms. This frontend application will make requests to our backend, that in this case has it entrypoint mapped in APIGateway to send the request to our `Search` lambda function, this function will then have the logic to get the data from our DynamoDB table.
+To see the collected data, the user will access a webpage that will be our `Frontend`, hosted in Amplify. This web page will list all the offers and have some filters, like number of bedrooms and number of bathrooms. This web page also will make requests to our backend, who is an entrypoint mapped in APIGateway, that by its time will send the request to our `Search` lambda function. This lambda function will then have the logic to retrieve the data from our DynamoDB table and return back to the user.
 
-## Installing dependencies
+## Getting started
 
-The `cdk` CLI tool is required in all subsequent steps below, you can install it using `npm`:
+### Installing dependencies
+
+The `cdk` CLI tool is required in all subsequent steps, you can install it using `npm`:
 
 ```bash
 $ npm install -g aws-cdk
@@ -47,7 +51,7 @@ $ cdk --version
 1.94.0 (build 2c1c0eb)
 ```
 
-## Setup the project
+### Setup the project
 
 In any folder execute the command below:
 
@@ -57,7 +61,9 @@ $ cdk init app --language=python
 ✅ All done!
 ```
 
-The output of this command also give us the commands available to synthesize our application, the synthesis process is similar to a compilation, by doing it we are generating a file that describes our CloudFormation stack, the synthesis also will check if the related code is correct. Finally, after the synthesis we will be able to deploy our application, we can do it right now but first we need to install our Python dependencies, lets do it inside a Python virtual environment.
+The output of this command also give us the commands available to synthesize our application. The synthesis process is similar to a compilation, but instead of the output been a binary it will generate a CloudFormation definition file. The synthesis also will do some checks to validate if our code is correct, but keep in mind that it won't get everything, sometimes you will see the errors just when creating or updating your stack in CloudFormation.
+
+After we do the synthesis we will be able to deploy our application, we can do it right now but first we need to install our Python dependencies. Lets do this inside a Python virtual environment.
 
 ```bash
 $ python3 -m venv .venv
@@ -102,11 +108,11 @@ AppStack: creating CloudFormation changeset...
  ✅  AppStack
 ```
 
-After finished, you can access your AWS account and go to stacks `CloudFormation` page, there you will see a new `AppStack`, opening this stack page and looking at the resources you will see that the only resource that this stack is managing is the metadata from our previous synthesis.
+After finished, you can access your AWS account and check your stacks in the `CloudFormation` console page, there you will see a new `AppStack`, opening this stack page and looking at the resources you will see that the only resource that this stack is managing is the metadata from our previous synthesis.
 
 Now that we are able to synthesize our application and deploy it to our account lets see how we can add some AWS services.
 
-## Adding our first item to our stack
+### Adding our first item to our stack
 
 If you have followed the previous section you probably have a directory like this:
 
@@ -180,7 +186,7 @@ class AppStack(cdk.Stack):
         # The code that defines your stack goes here
 ```
 
-This file, as the name suggest, is our application stack, here is where we defined our resources, like S3 buckets, EC2 instances, DynamoDB tables, etc. Lets add our statis data bucket.
+This file, as the name suggest, is our application stack, here is where we defined our resources, like S3 buckets, EC2 instances, DynamoDB tables, etc. Just to give you and example, lets create a S3 bucket.
 
 ```python
 from aws_cdk import core as cdk
@@ -238,7 +244,7 @@ As we can see we are replacing the bucket with another bucket with the name that
 
 > Notice that in this example the previous bucket was not deleted, this is done by default for most resources, it you want you can manually delete it or run `cdk destroy` to delete all resources.
 
-## Adding example resources
+## Going back to our Example
 
 Going back to our architecture, to add all the resources the process is basicaly the same, the final `app_stack.py` would be something like:
 
