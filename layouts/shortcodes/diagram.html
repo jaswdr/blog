@@ -1,5 +1,4 @@
-{{ $src := .Get "src" }}
-{{ $alt := .Get "alt" }}
+{{ $name := .Get "name" }}
 {{ $title := .Get "title" }}
 {{ $width := .Get "width" }}
 {{ $height := .Get "height" }}
@@ -10,11 +9,11 @@ div.image-center img { border: 5px solid #555; }
 </style>
 <div class="image-center">
     <img 
-      src="{{ $src }}"
-      alt="{{ $alt }}"
+      src="https://raw.githubusercontent.com/jaswdr/diagrams/master/{{ $name }}.jpg"
+      alt="{{ $title }}"
       width="{{ $width }}"
       height="{{ $height }}"
       decoding="async"/>
     <br>
-    {{ $title }} - <a href="{{ $src }}" target="_blank">Link</a>
+    {{ $title }} - <a href="https://github.com/jaswdr/diagrams/blob/master/{{ $name }}.py" target="_blank">Source</a>
 </div>
