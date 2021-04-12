@@ -12,6 +12,8 @@ toc = true
 share = true
 +++
 
+## Introduction
+
 When working at any software, as a developer, you need to know what is going to be delivered to production, for our application code base we use things like git to track changes, keep a history, review and revert if needed. But when we talk about infrastructure resources in our cloud provider, this task is not easy, sometimes because the provider doesn’t have a good API or the tools doesn’t give us what we need, other times is because it is too much complicated, and we are trying to solve something simple as quick as possible, so we do it manually. After doing this a couple of times our account is a mess, with a lot of resources that we don’t use any more, and we only notice that they exist when our manager complains about the bill.
 
 In AWS the service that can help to solve this kind of issue is Cloudformation. A single interface that can be used to describe the desired state of your resources. But even that sometimes is too complicated, too much verbose, or even limited by been static, making us copying and pasting a lot of sections of the big definition file.
