@@ -3,16 +3,12 @@
 {{ $width := .Get "width" }}
 {{ $height := .Get "height" }}
 
-<style>
-div.image-center { text-align: center; }
-div.image-center img { border: 5px solid #555; }
-</style>
 <div class="image-center">
     <img 
       src="https://raw.githubusercontent.com/jaswdr/diagrams/master/{{ $name }}.jpg"
       alt="{{ $title }}"
-      width="{{ $width }}"
-      height="{{ $height }}"
+      width="100%"
+      height="auto"
       decoding="async"/>
     <br>
     {{ $title }} - <a href="https://github.com/jaswdr/diagrams/blob/master/{{ $name }}.py" target="_blank">Source</a>
