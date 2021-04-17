@@ -123,5 +123,5 @@ gzip = true
     lineNos = true
     lineNumbersInTable = true
     noClasses = true
-    style = "dracula"
+    style = "github"
     tabWidth = 4
