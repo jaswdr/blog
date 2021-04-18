@@ -243,7 +243,12 @@ After finishing both the executions you can access your AWS account and see that
 
 ## Final result
 
-You can see the frontend web page, who access this example running in my AWS personal account at https://master.dty3vkmmal3tp.amplifyapp.com/.
+{{< image src="https://raw.githubusercontent.com/jaswdr/aws-cdk-crawler-frontend-example/master/final-result.gif" >}}
+
+Layer | Link
+--- | ---
+Backend + Infrastructure | https://github.com/jaswdr/aws-cdk-crawler-backend-example
+Frontend | https://github.com/jaswdr/aws-cdk-crawler-frontend-example
 
 ## Conclusion
 
