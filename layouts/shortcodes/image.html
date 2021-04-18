@@ -15,6 +15,8 @@ div.image-center img { border: 5px solid #555; }
       width="{{ $width }}"
       height="{{ $height }}"
       decoding="async"/>
-    <br>
-    {{ $title }} - <a href="{{ $src }}" target="_blank">Link</a>
+    {{ with $title }}
+      <br>
+      {{ . }} - <a href="{{ $src }}" target="_blank">Link</a>
+    {{ end }}
 </div>
