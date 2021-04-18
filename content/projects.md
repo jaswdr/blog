@@ -9,5 +9,6 @@ comments = false
 # Projects
 
 - [Faker](https://github.com/jaswdr/faker): Ultimate fake data generator for Go with zero dependencies
+- [Blog](https://github.com/jaswdr/blog): This blog :smile:
 
 More to share soon...
