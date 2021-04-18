@@ -1,3 +1,5 @@
+![Profile Photo](/profile.png)
+
 # Who am I?
 
 SysDE at AWS with vast IT experience. Skills include proficiency in many programming languages, virtualization, analytical thinking and creative problem-solving. Able to apply customer service concepts to IT to improve user experience for clients, employees and administration.
