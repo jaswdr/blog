@@ -11,6 +11,10 @@ SysDE at AWS with vast IT experience. Skills include proficiency in many program
 [Linkedin](https://www.linkedin.com/in/jaswdr/) |
 [Twitter](https://twitter.com/jaswdr)
 
+[My Public SSH Key](/jaswdr.pub)
+
+[My Public GPG Key](/jaswdr.gpg)
+
 ---
 
 # Experience
