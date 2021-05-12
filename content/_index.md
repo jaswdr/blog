@@ -4,7 +4,7 @@
 
 SysDE at AWS with vast IT experience. Skills include proficiency in many programming languages, virtualization, analytical thinking and creative problem-solving. Able to apply customer service concepts to IT to improve user experience for clients, employees and administration.
 
-[My Resume](https://docs.google.com/document/d/e/2PACX-1vQ5u6fxQbbtUyr495NnoZN74M2AbdIA8hvfFaGynfyzD3fAFw9wOnU42Xv5sfv_aoNf3bE19KNskLIe/pub)
+[My CV](https://docs.google.com/document/d/e/2PACX-1vQ5u6fxQbbtUyr495NnoZN74M2AbdIA8hvfFaGynfyzD3fAFw9wOnU42Xv5sfv_aoNf3bE19KNskLIe/pub)
 
 [Email](mailto:jonathanschweder@gmail.com) |
 [Github](https://github.com/jaswdr) |
