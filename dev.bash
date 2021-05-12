@@ -9,4 +9,6 @@ hugo serve \
     --noHTTPCache \
     --navigateToChanged \
     --noChmod \
-    --noTimes
+    --noTimes \
+    --bind 0.0.0.0 \
+    --baseUrl http://oss
