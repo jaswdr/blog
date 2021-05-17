@@ -1,14 +1,14 @@
 #!/bin/bash
 
 hugo serve \
-    --watch \
-    --ignoreCache \
+    --baseUrl http://$(hostname) \
+    --bind 0.0.0.0 \
+    --buildDrafts \
     --cleanDestinationDir \
     --forceSyncStatic \
-    --noChmod \
-    --noHTTPCache \
+    --ignoreCache \
     --navigateToChanged \
     --noChmod \
+    --noHTTPCache \
     --noTimes \
-    --bind 0.0.0.0 \
-    --baseUrl http://oss
+    --watch
