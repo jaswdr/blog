@@ -33,6 +33,16 @@ sudo chown $USER /usr/share/ca-certificates/localhost.crt
 sudo dpkg-reconfigure ca-certificates
 ```
 
+After running the last command you will see a "ca-certificates configuration" window, use the below answers:
+
+Trust new certificates from certificate authorities? __yes__
+
+Certificates to activate: mark __localhost.crt__ (space bar mark the item)
+
+Then finally use __Tab__ to go to the __OK__ button and press __Enter__.
+
+A __done.__ message will be printed, now your certificate is trusted and can be used locally.
+
 ## Using the certificate
 
 Now you can normally use the certificate, below an example of HTTP server using the **ssl** module in Python.
