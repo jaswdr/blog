@@ -12,19 +12,27 @@ Config:
 
 Plugins:
 - [VundleVim/Vundle](https://github.com/VundleVim/Vundle.vim)
-- [preservim/nerd](https://github.com/preservim/nerdtree)
-- [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+- [JamshedVesuna/vim-markdown-preview](https://github.com/JamshedVesuna/vim-markdown-preview)
 - [altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
-- [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
+- [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [codota/tabnine-vim](https://github.com/codota/tabnine-vim)
-- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons)
+- [drewtempelmeyer/palenight.vim](https://github.com/drewtempelmeyer/palenight.vim)
 - [fatih/vim-go](https://github.com/fatih/vim-go)
+- [junegunn/fzf](https://github.com/junegunn/fzf)
+- [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
+- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons)
+- [scrooloose/nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+- [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
+
+Terminal:
+
+> Clone and build all tools from source using this [repository](https://github.com/jaswdr/tools).
 
 ## [bat](https://github.com/sharkdp/bat)
 
 ```
- bat
 # Print and concatenate files.
 # A `cat` clone with syntax highlighting and Git integration.
 # More information: <https://github.com/sharkdp/bat>.
