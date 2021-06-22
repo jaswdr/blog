@@ -1,7 +1,7 @@
 #!/bin/bash
 
 hugo serve \
-    --baseUrl http://$(hostname) \
+    --baseUrl http://desktop.jaswdr.dev \
     --bind 0.0.0.0 \
     --buildDrafts \
     --cleanDestinationDir \
