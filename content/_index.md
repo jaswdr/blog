@@ -1,4 +1,4 @@
-![Profile Photo](/profile.png)
+![Profile Photo](/profile.webp)
 
 # Who am I?
 
