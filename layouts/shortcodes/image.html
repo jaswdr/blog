@@ -1,0 +1,22 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $title := .Get "title" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+
+<style>
+div.image-center { text-align: center; }
+div.image-center img { border: 5px solid #555; }
+</style>
+<div class="image-center">
+    <img 
+      src="{{ $src }}"
+      alt="{{ $alt }}"
+      width="{{ $width }}"
+      height="{{ $height }}"
+      decoding="async"/>
+    {{ with $title }}
+      <br>
+      {{ . }} - <a href="{{ $src }}" target="_blank">Link</a>
+    {{ end }}
+</div>

@@ -1,0 +1,14 @@
+{{ $name := .Get "name" }}
+{{ $title := .Get "title" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+
+<div class="image-center">
+    <img 
+      src="https://raw.githubusercontent.com/jaswdr/diagrams/master/{{ $name }}.jpg"
+      alt="{{ $title }}"
+      width="100%"
+      height="auto"
+      decoding="async"/>
+    <br>
+</div>
