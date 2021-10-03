@@ -22,7 +22,7 @@ params:
     keywords: [Blog, Portfolio, Jonathan, Schweder]
     author: Jonathan
     # author: ["Me", "You"] # multiple authors
-    images: ["/images/me.png"]
+    images: ["/images/me.webp"]
     DateFormat: "January 2, 2006"
     defaultTheme: auto # dark, light
     disableThemeToggle: true
@@ -44,14 +44,14 @@ params:
         disableHLJS: false # to disable highlight.js
         disableFingerprinting: false
         favicon: "favicon.ico"
-        favicon16x16: "/images/favicon.png"
-        favicon32x32: "/images/favicon.png"
-        apple_touch_icon: "/images/favicon.png"
-        safari_pinned_tab: "/images/favicon.png"
+        favicon16x16: "/images/favicon_16x16.webp"
+        favicon32x32: "/images/favicon_32x32.webp"
+        apple_touch_icon: "/images/favicon_apple_touch.webp"
+        safari_pinned_tab: "/images/favicon_32x32.webp"
 
     label:
         text: "jaswdr"
-        icon: "/images/favicon.png"
+        icon: "/images/favicon_35x35.webp"
         iconHeight: 35
 
     # profile-mode
@@ -59,7 +59,7 @@ params:
         enabled: true # needs to be explicitly set
         title: Jonathan Schweder
         subtitle: "SysDE, Linux Developer, Go and Python Developer, Kernel Enthusiastic, Speaker, DevOps and Freelancer"
-        imageUrl: "/images/me.png"
+        imageUrl: "/images/me_homepage.webp"
         imageWidth: 120
         imageHeight: 120
         imageTitle: Profile Picture
