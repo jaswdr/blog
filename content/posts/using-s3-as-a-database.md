@@ -4,10 +4,7 @@ date = "2021-02-21"
 description = "Operating any kind of SQL or NoSQL database is always a complex problem depending on your scale, but there are a lot of cloud-based alternatives, one of those alternatives for storing data is Amazon S3, a project that started as a object storage system, but today has some operations available that can be sufficient for a big number of applications. Let's see in this tutorial how you can use Amazon S3 as a NoSQL alternative."
 tags = [
     "aws",
-    "s3",
-    "python",
-    "database",
-    "nosql"
+    "s3"
 ]
 draft = false
 toc = true
