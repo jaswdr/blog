@@ -13,7 +13,7 @@ share = true
 
 ### Definition
 
-By definition the P-value is a measure of the probability of obtaining a result that is different from the null hypothesis. The Null Hypotheis is the hypothesis that the result is the same as the one we are testing, in other words, the hypothesis that nothing has changed.
+By definition the P-value is a measure of the probability of obtaining a result that is different from the null hypothesis. The Null Hypothesis is the hypothesis that the result is the same as the one we are testing, in other words, the hypothesis that nothing has changed.
 
 The P-value is a number between 0 and 1. The closer to 0 the p-value is, the more likely the result is to be different from the null hypothesis. Otherwise, if the p-value is closer to 1, the result is more likely to be the same as the null hypothesis.
 
@@ -22,14 +22,14 @@ The P-value is a number between 0 and 1. The closer to 0 the p-value is, the mor
 To calculate the p-value, we sum 3 components:
 
 1. The probability of the result being the observation.
-2. The probability of the result being something else that is equally rate to the observation.
+2. The probability of the result being something else that is equally rare to the observation.
 3. The probability of observing something rarer or more extreme than the observation.
 
 Let's see an example in practice.
 
 ### Example
 
-You have flipped a coin 2 times. Both times the coin landed on heads. You start to think that your coin is special, and you want to know if it is. To check that you start with the Null Hypothesis.
+You have flipped a coin 2 times. Both times the coin landed on heads. You start to think that your coin is special, and you want to know if it is. To check that, you start with the Null Hypothesis.
 
 - Null Hypothesis (H0): Even thought my coin landed heads twice in a row, it is no different from any other coin.
 - The alternative hypothesis (H1): My coin is special.
@@ -51,7 +51,7 @@ With those possibilities in mind, we can start to calculate the p-value, using t
 1/4 = 0.25
 ```
 
-(2) The probability of the result being something else that is equally rate to the observation.
+(2) The probability of the result being something else that is equally rare to the observation.
 
 1 possibility of it being Tails and Tails, out of 4 outcomes.
 
