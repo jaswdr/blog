@@ -15,6 +15,12 @@ minify:
     disableXML: true
     minifyOutput: true
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: "Jonathan's Blog"
@@ -66,8 +72,8 @@ params:
         buttons:
             - name: Posts
               url: posts
-            - name: Tags
-              url: tags
+            - name: Search
+              url: search
             - name: CV
               url: https://docs.google.com/document/d/e/2PACX-1vQ5u6fxQbbtUyr495NnoZN74M2AbdIA8hvfFaGynfyzD3fAFw9wOnU42Xv5sfv_aoNf3bE19KNskLIe/pub
 
@@ -118,11 +124,11 @@ menu:
     main:
         - identifier: posts
           name: Posts
-          url: /posts/
+          url: /posts
           weight: 10
-        - identifier: tags
-          name: Tags
-          url: /tags/
+        - identifier: search
+          name: Search
+          url: /search
           weight: 20
         - identifier: github
           name: Github
