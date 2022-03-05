@@ -71,9 +71,9 @@ params:
         imageTitle: Profile Picture
         buttons:
             - name: Posts
-              url: posts
+              url: posts/
             - name: Search
-              url: search
+              url: search/
             - name: CV
               url: https://docs.google.com/document/d/e/2PACX-1vQ5u6fxQbbtUyr495NnoZN74M2AbdIA8hvfFaGynfyzD3fAFw9wOnU42Xv5sfv_aoNf3bE19KNskLIe/pub
 
