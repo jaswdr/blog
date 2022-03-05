@@ -91,6 +91,8 @@ params:
           url: "https://twitter.com/jaswdr"
         - name: linkedin
           url: "https://linkedin.com/in/jaswdr"
+        - name: rss
+          url: "/index.xml"
 
     analytics:
         google:
