@@ -11,7 +11,7 @@ buildFuture: false
 buildExpired: false
 enableInlineShortcodes: true
 
-googleAnalytics: "UA-173591496-1"
+googleAnalytics: "G-TQDRG59SG2"
 
 minify:
     disableXML: true
