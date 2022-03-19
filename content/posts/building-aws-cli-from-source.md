@@ -7,7 +7,7 @@ tags = [
     "cli"
 ]
 draft = false
-toc = false
+showtoc = false
 share = true
 categories = [
     "aws"

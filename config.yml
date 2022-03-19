@@ -5,9 +5,11 @@ paginate: 5
 theme: "PaperMod"
 
 enableRobotsTXT: true
+enableEmoji: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableInlineShortcodes: true
 
 googleAnalytics: "UA-173591496-1"
 

@@ -1,13 +1,13 @@
 +++
 title = "How to read large codebases"
-date = "2021-06-24"
+date = "2022-03-19"
 description = "When you start in a new project, sometimes is hard to start to contribute to it, check here some tips and tricks that can help you to read and understand large codebases."
 tags = [
     "code",
     "reading"
 ]
-draft = true
-toc = true
+draft = false
+showtoc = true
 share = true
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "Projects"
 draft = false
-toc = false
+showtoc = false
 comments = false
 +++
 
