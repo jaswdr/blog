@@ -1,0 +1,7 @@
+<figure {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+  Listen to this article:
+  <audio controls preload="{{ .Get "preload" | default "metadata" }}" style="width: 100%">
+    {{ with .Get "src" }}<source src="{{ . | relURL }}" type="audio/mpeg">{{ end }}
+  </audio>
+  {{ with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
