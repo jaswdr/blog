@@ -1,15 +1,16 @@
-# Personal blog
+<h1 align=center>Personal Blog | <a href="https://jaswdr.dev/" rel="nofollow">jaswdr.dev</a></h1>
 
-[![hugo-build](https://github.com/jaswdr/blog/actions/workflows/hugo.yml/badge.svg?branch=master)](https://github.com/jaswdr/blog/actions/workflows/hugo.yml)
+<p align="center">
+  <kbd><img src="https://github.com/jaswdr/blog/blob/master/homepage.png?raw=true" alt="Mockup image" title="Mockup"/></kbd>
+</p>
 
-### Getting started
-
-Clone and run locally
+---
+## Install/Update 📥
 
 ```bash
-$ git clone https://github.com/jaswdr/blog
+$ git clone --recursive https://github.com/jaswdr/blog
 $ cd ./blog
-$ ./dev.bash
+$ hugo serve
 
                    | EN
 -------------------+-----
@@ -34,6 +35,8 @@ Press Ctrl+C to stop
 
 Then access [http://localhost:1313/](http://localhost:1313/)
 
-### License
+## [Pagespeed Insights](https://pagespeed.web.dev/report?url=https://jaswdr.dev/)
+
+## License
 
 GNU GPL v3.0
