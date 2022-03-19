@@ -27,7 +27,6 @@ To calculate the p-value, we sum 3 components:
 1. The probability of the result being the observation.
 2. The probability of the result being something else that is equally rare to the observation.
 3. The probability of observing something rarer or more extreme than the observation.
-4. 
 
 Let’s see an example in practice.
 
