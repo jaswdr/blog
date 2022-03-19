@@ -11,30 +11,49 @@ showtoc = true
 share = true
 +++
 
-## Spend more time reading then writting
+{{<audio src="https://s3.eu-west-1.amazonaws.com/jaswdr.dev-tts//posts/how-to-read-large-codebases.31f8850a-64de-49b3-8518-dbee5116927f.mp3">}}
 
-As developers, we should spend more time reading than writting code. Mostly because the majority of the time we will try to change code, and to change it we need to understand how our changes affect other parts of the systems. For that is common to read a lot.
+## How to read large codebases
+
+When you start in a new project, sometimes is hard to contribute to it, check here some tips and tricks that can help you read and understand large codebases.
+
+
+## Waste more time reading than writing
+
+As developers, we should spend more time reading than writing code. Mostly because we will try to change code, and to change it, we need to understand how our changes affect other parts of the system.
 
 ## Understand the design intentions
 
-Instead of trying to read line by line, understanding the behaviors, try to understand the intentions. Try to answer questions like "What was the author intention in this part of the code?", "Why is he doing this?", "How this connects with the rest of the system?". This way you can focus on what matters.
+Instead of trying to read line by line, understanding the behaviors, try to understand the intentions. Think of some questions to drive your thoughts:
+
+- “What was the author's intention?”
+
+- “Why is it done this way?”
+
+- “How does it connect with the rest of the system?”
 
 ## Join the community
 
-Go and join email lists, Slack channels or any other tools that the community uses to communicate. Is that community that can help you in cases where you are stuck.
+Join email lists, Slack channels or any other tools that the community uses to communicate. Is that community that can help you in situations where you are stuck.
+
 
 ## Use the software
 
-The simplest way to understand the software is using it. Do experiments, try the relevant features and see the behavior of the system.
+The simplest way to understand the software is by using it. Do experiments, try the relevant features and understand the behavior of the system.
 
-## Folow step-by-step executions
 
-Another good way to understand a software is running it step-by-step to see what it is doing, what are the path and possible branches, what it checks, classes, methods and variables used in the execution, etc.
+## Follow step-by-step executions
 
-## Reading tests
+Another good way to understand a software is running it step-by-step to watch the execution flow, what are the path and branches, functions, classes, methods and variables used, etc.
 
-Today any professional software has tests, reading them are a good way to see how the software is intended to be used. Specially unit tests, that can simulate scenarios of happy paths and exceptions.
+## Read tests
 
-## Refactoring
+Today, any relevant software has tests. Reading them is a good way to study how the software works. Especially unit tests, who can simulate happy path scenarios and exceptions.
 
-Last way to understand the code is to refactor it. Finding things to improve, improving the reading and consequently the writing of new code.
+## Refactor
+
+Last way to understand the code is to refactor it. Identifying things to improve, improving the reading and the writing of the new code.
+
+## Conclusion
+
+I hope these tips help you read large codebases and make easier to contribute to your work, study or open source project.
