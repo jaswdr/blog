@@ -46,16 +46,16 @@ The potential outcomes for flipping a coin 2 times are:
 With those possibilities in mind, we can calculate the p-value using the 3 components I previously mentioned.
 
 1. The probability of the result being the observation.
-one possibility of it being heads and heads out of four outcomes.
 
-```
+```python
+# 1 possibility of it being heads and heads out of 4 outcomes.
 1/4 = 0.25
 ```
 
 2. The probability of the result being something else that is equally rare to the observation.
-1 possibility of it being Tails and Tails, out of 4 outcomes.
 
-```
+```python
+# 1 possibility of it being Tails and Tails, out of 4 outcomes.
 1/4 = 0.25
 ```
 
