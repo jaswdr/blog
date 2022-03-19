@@ -11,7 +11,7 @@ showtoc = true
 share = true
 +++
 
-{{<audio src="https://s3.eu-west-1.amazonaws.com/jaswdr.dev-tts//posts/how-to-read-large-codebases.31f8850a-64de-49b3-8518-dbee5116927f.mp3">}}
+{{<audio src="https://s3.eu-west-1.amazonaws.com/jaswdr.dev-tts/posts/how-to-read-large-codebases.31f8850a-64de-49b3-8518-dbee5116927f.mp3">}}
 
 ## How to read large codebases
 
