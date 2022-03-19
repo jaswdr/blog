@@ -1,6 +1,5 @@
 +++
 title = "Projects"
-menu = "main"
 draft = false
 toc = false
 comments = false

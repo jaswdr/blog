@@ -30,8 +30,8 @@ params:
     # author: ["Me", "You"] # multiple authors
     images: ["/images/me.webp"]
     DateFormat: "January 2, 2006"
-    defaultTheme: auto # dark, light
-    disableThemeToggle: true
+    defaultTheme: dark
+    disableThemeToggle: false
 
     ShowReadingTime: true
     ShowShareButtons: true
@@ -71,9 +71,11 @@ params:
         imageTitle: Profile Picture
         buttons:
             - name: Posts
-              url: posts/
+              url: /posts/
             - name: Search
-              url: search/
+              url: /search/
+            - name: Subscribe
+              url: /subscribe/
             - name: CV
               url: https://docs.google.com/document/d/e/2PACX-1vQ5u6fxQbbtUyr495NnoZN74M2AbdIA8hvfFaGynfyzD3fAFw9wOnU42Xv5sfv_aoNf3bE19KNskLIe/pub
 
@@ -140,6 +142,18 @@ menu:
           name: CV
           url: https://docs.google.com/document/d/e/2PACX-1vQ5u6fxQbbtUyr495NnoZN74M2AbdIA8hvfFaGynfyzD3fAFw9wOnU42Xv5sfv_aoNf3bE19KNskLIe/pub
           weight: 40
+        - identifier: projects
+          name: Projects
+          url: /projects
+          weight: 50
+        - identifier: devtools
+          name: Dev Tools
+          url: /tools
+          weight: 60
+        - identifier: subscribe
+          name: Subscribe
+          url: /subscribe
+          weight: 70
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 markup:

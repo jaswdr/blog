@@ -1,7 +1,6 @@
 +++
 title = "Tools"
 description = "List of tools that I use"
-menu = "main"
 draft = false
 toc = true
 comments = false
