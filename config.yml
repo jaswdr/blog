@@ -31,7 +31,7 @@ params:
     images: ["/images/me.webp"]
     DateFormat: "January 2, 2006"
     defaultTheme: dark
-    disableThemeToggle: false
+    disableThemeToggle: true
 
     ShowReadingTime: true
     ShowShareButtons: true
