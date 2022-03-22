@@ -13,11 +13,6 @@ share = true
 
 {{<audio src="https://s3.eu-west-1.amazonaws.com/jaswdr.dev-tts/posts/how-to-read-large-codebases.31f8850a-64de-49b3-8518-dbee5116927f.mp3">}}
 
-## How to read large codebases
-
-When you start in a new project, sometimes is hard to contribute to it, check here some tips and tricks that can help you read and understand large codebases.
-
-
 ## Waste more time reading than writing
 
 As developers, we should spend more time reading than writing code. Mostly because we will try to change code, and to change it, we need to understand how our changes affect other parts of the system.
