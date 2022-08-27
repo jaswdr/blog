@@ -79,7 +79,7 @@ params:
             - name: Subscribe
               url: /subscribe/
             - name: CV
-              url: https://github.com/jaswdr/cv/raw/master/Jonathan_Schweder_CV.pdf
+              url: https://github.com/jaswdr/cv/raw/gh-pages/Jonathan_Schweder_CV.pdf
             - name: Status
               url: https://jaswdr.github.io/blog_uptime/
 
