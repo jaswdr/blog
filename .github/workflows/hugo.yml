@@ -18,6 +18,6 @@ jobs:
           HUGO_VERSION: 0.89.4
           TARGET_REPO: jaswdr/blog
           TARGET_BRANCH: master
-          TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HUGO_ARGS: '-t PaperMod --minify'
           CNAME: jaswdr.github.io
