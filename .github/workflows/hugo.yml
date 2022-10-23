@@ -17,7 +17,7 @@ jobs:
         env:
           HUGO_VERSION: 0.89.4
           TARGET_REPO: jaswdr/blog
-          TARGET_BRANCH: master
+          TARGET_BRANCH: release
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HUGO_ARGS: '--minify'
           CNAME: jaswdr.github.io
