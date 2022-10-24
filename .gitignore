@@ -40,3 +40,6 @@ tags
 
 # Coc configuration directory
 .vim
+
+# MacOS
+.DS_Store
