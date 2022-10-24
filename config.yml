@@ -58,8 +58,8 @@ params:
         safari_pinned_tab: "/images/favicon_32x32.webp"
 
     label:
-        text: "jaswdr"
-        icon: "/images/favicon_35x35.webp"
+        text: ""
+        icon: "/images/favicon.gif"
         iconHeight: 35
 
     # profile-mode
@@ -88,7 +88,7 @@ params:
 
     socialIcons:
         - name: email
-          url: "mailto:jonathanschweder@gmail.com"
+          url: "mailto:blog@jaswdr.dev"
         - name: github
           url: "https://github.com/jaswdr"
         - name: twitter
