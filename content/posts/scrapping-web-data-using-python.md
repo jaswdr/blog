@@ -9,9 +9,11 @@ tags = [
     "beautifulsoup"
 ]
 draft = false
-showtoc = true
+showtoc = false
 share = true
 +++
+
+{{<audio src="https://s3.eu-west-1.amazonaws.com/jaswdr.dev-tts/posts/scrapping-web-data-using-python.de08f0a4-24eb-491e-a6b8-5cbce31157fd.mp3">}}
 
 Scraping web data refers to the process of extracting data from a website. This can be useful for a variety of reasons, such as collecting information for research or creating a backup of the data on a website. In order to scrape web data, you can use a combination of the `requests` and `BeautifulSoup` packages in Python.
 
