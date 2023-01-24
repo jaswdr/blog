@@ -3,9 +3,9 @@ title = "What is a Perceptron and how to implement it in PyTorch"
 date = "2022-12-21"
 description = "In this article I explain what is a Perceptron and how to implement it in PyTorch."
 tags = [
-    "machine-learning",
-    "deep-learning",
-    "pytorch"
+    "Machine Learning",
+    "Deep Learning",
+    "PyTorch"
 ]
 draft = false
 showtoc = true

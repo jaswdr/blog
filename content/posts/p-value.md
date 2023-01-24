@@ -3,8 +3,8 @@ title = "Explaining what is P-value and how to calculate it"
 date = "2021-11-22"
 description = "In this article I explain what is the p-value and how to calculate it."
 tags = [
-    "statistics",
-    "p-value"
+    "Statistics",
+    "P-value"
 ]
 draft = false
 showtoc = true

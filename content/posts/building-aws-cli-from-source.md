@@ -3,8 +3,8 @@ title = "Building AWS CLI from Source"
 date = "2021-02-28"
 description = "AWS CLI is the terminal tool used to interact with AWS services, if you want the latest available version the best option is built from source."
 tags = [
-    "aws",
-    "cli"
+    "AWS",
+    "CLI"
 ]
 draft = false
 showtoc = false

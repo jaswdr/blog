@@ -3,8 +3,8 @@ title = "Generating and using self-signed certificates for local developing"
 date = "2021-05-17"
 description = ""
 tags = [
-    "development",
-    "certificates"
+    "Development",
+    "Certificates"
 ]
 draft = false
 showtoc = false

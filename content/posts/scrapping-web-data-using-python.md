@@ -3,10 +3,9 @@ title = "Scrapping Web data using Python"
 date = "2022-12-11"
 description = ""
 tags = [
-    "web-scrapping",
-    "python",
-    "requests",
-    "beautifulsoup"
+    "Web Scraping",
+    "Python",
+    "BeautifulSoup"
 ]
 draft = false
 showtoc = false

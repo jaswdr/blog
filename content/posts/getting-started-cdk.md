@@ -3,9 +3,9 @@ title = "Getting started with CDK"
 date = "2021-04-06"
 description = ""
 tags = [
-    "aws",
-    "cdk",
-    "infrastructure"
+    "AWS",
+    "CDK",
+    "Infrastructure as Code"
 ]
 draft = false
 showtoc = true
