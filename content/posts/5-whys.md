@@ -7,13 +7,13 @@ tags = [
     "Root Cause Analysis",
     "Team-Based Approach"
 ]
-draft = true
+draft = false
 showtoc = true
 share = true
 +++
 
 
-{{<audio src="https://s3.eu-west-1.amazonaws.com/jaswdr.dev-tts/posts/perceptron.e9f4658f-8819-4074-a827-35ba7f40a45d.mp3">}}
+{{<audio src="https://s3.eu-west-1.amazonaws.com/jaswdr.dev-tts/posts/5-whys.62257153-b9bb-4090-b886-41c3fb217615.mp3">}}
 
 The "5 Why's" is a problem-solving technique that aims to identify the root cause of a problem by asking "why" questions. The technique is based on the idea that most problems have multiple underlying causes, and to truly understand and solve a problem, it is necessary to dig deep and find the root cause.
 
