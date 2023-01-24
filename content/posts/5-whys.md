@@ -1,7 +1,7 @@
 +++
 title = "5 Why's"
 date = "2023-01-24"
-description = "This article explains the "5 Why's" problem-solving technique and its benefits of encouraging a thorough understanding of a problem and team-based approach to identify multiple root causes."
+description = "This article explains the \"5 Why's\" problem-solving technique and its benefits of encouraging a thorough understanding of a problem and team-based approach to identify multiple root causes."
 tags = [
     "Problem Solving Techniques",
     "Root Cause Analysis",
