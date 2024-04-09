@@ -5,6 +5,9 @@ draft = false
 comments = false
 +++
 
+Editor:
+- {{<github src=neovim/neovim >}}
+
 Config:
 - [.vimrc](https://github.com/jaswdr/dotfiles/blob/master/vim/.vimrc)
 - [.gitconfig](https://github.com/jaswdr/dotfiles/blob/master/git/.gitconfig)
@@ -32,6 +35,7 @@ Terminal:
 - {{<github src=stedolan/jq >}}
 - {{<github src=pystardust/ytfzf >}}
 - {{<github src=dnephin/filewatcher >}}
+- {{<github src=charmbracelet/glow >}}
 - [cheat](https://cheat.sh/)
 
 > Clone and build all tools from source using this [repository](https://github.com/jaswdr/tools).
