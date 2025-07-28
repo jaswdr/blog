@@ -11,7 +11,7 @@ COPY themes/ ./themes/
 
 RUN hugo --minify --gc --cleanDestinationDir
 
-FROM node:18-alpine as optimizer
+FROM node:24-alpine as optimizer
 
 WORKDIR /app
 
@@ -24,8 +24,6 @@ RUN find ./public -name "*.css" -type f -exec sh -c 'cssnano "$1" "$1.tmp" && mv
 RUN find ./public -name "*.js" -not -name "*.min.js" -type f -exec sh -c 'terser "$1" --compress --mangle -o "$1.tmp" && mv "$1.tmp" "$1"' _ {} \;
 
 FROM nginx:alpine
-
-RUN apk add --no-cache nginx-mod-http-brotli
 
 COPY --from=optimizer /app/public /usr/share/nginx/html
 
