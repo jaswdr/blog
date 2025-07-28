@@ -4,4 +4,4 @@ WORKDIR /project
 
 COPY . .
 
-CMD ["server", "--minify", "--noBuildLock", "--bind", "0.0.0.0", "-b", "https://jaswdr.dev", "--port", "80", "--appendPort=false"]
+CMD ["server", "--minify", "--noBuildLock", "--bind", "0.0.0.0", "-b", "https://jaswdr.dev", "--port", "80", "--appendPort=false", "--watch=false"]
