@@ -1,0 +1,30 @@
+# Git
+.git
+.gitignore
+.gitmodules
+
+# Hugo
+public/
+resources/
+
+# Development
+.DS_Store
+Thumbs.db
+*.log
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Scripts
+scripts/
+
+# Documentation
+README.md
+CLAUDE.md
+
+# Config variants
+config1.yml
+
+# Homepage image (not needed in container)
+homepage.png
