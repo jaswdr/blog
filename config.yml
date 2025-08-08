@@ -76,7 +76,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: Jonathan Schweder
-    subtitle: "SysDE @aws, Go and Python Developer, Cloud, DevOps and future Data Scientist"
+    subtitle: "SysDE @mongodb, Go and Python Developer, Cloud, DevOps"
     imageUrl: "/images/me_homepage.webp"
     imageWidth: 120
     imageHeight: 120
