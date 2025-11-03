@@ -152,14 +152,14 @@ menu:
       name: CV
       url: https://github.com/jaswdr/cv/raw/gh-pages/Jonathan_Schweder_CV.pdf
       weight: 40
-    - identifier: projects
-      name: Projects
-      url: /projects
-      weight: 50
-    - identifier: devtools
-      name: Dev Tools
-      url: /tools
-      weight: 60
+    # - identifier: projects
+    #   name: Projects
+    #   url: /projects
+    #   weight: 50
+    # - identifier: devtools
+    #   name: Dev Tools
+    #   url: /tools
+    #   weight: 60
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 markup:
