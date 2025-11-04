@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is Jonathan's personal blog built with Hugo static site generator using the PaperMod theme. The blog features posts about AWS, development, machine learning, and various technical topics. It's deployed to AWS S3 and served at https://jaswdr.dev/.
+This is Jonathan's personal blog built with Hugo static site generator using the DoIt theme. The blog features posts about AWS, development, machine learning, and various technical topics. It's deployed to AWS S3 and served at https://jaswdr.dev/.
 
 ## Architecture
 
 - **Static Site Generator**: Hugo (located at `/sbin/hugo`)
-- **Theme**: PaperMod (located in `themes/PaperMod/` as a submodule)
-- **Configuration**: `config.yml` - main Hugo configuration with site settings, theme parameters, and social links
+- **Theme**: DoIt (located in `themes/DoIt/` as a submodule)
+- **Configuration**: `config.yml` - main Hugo configuration with site settings, DoIt theme parameters, and social links
 - **Content Structure**:
   - `content/posts/` - Blog posts in Markdown format
   - `content/projects.md` - Projects page
@@ -57,11 +57,12 @@ hugo --baseURL https://jaswdr.dev --cleanDestinationDir --enableGitInfo --minify
 ### Site Configuration
 - Main configuration in `config.yml` uses YAML format
 - Key sections: params (theme settings), menu (navigation), markup (syntax highlighting)
-- Theme uses profile mode on homepage with custom image and social links
-- Google Analytics and search functionality are enabled
+- DoIt theme features a profile mode on homepage with custom image and social links
+- Google Analytics and Fuse.js search functionality are enabled
 
 ### Theme Customization
-- PaperMod theme is included as a submodule in `themes/PaperMod/`
+- DoIt theme is included as a submodule in `themes/DoIt/`
+- DoIt theme documentation: https://github.com/HEIGE-PCloud/DoIt
 - Custom layouts and shortcodes in `layouts/` directory override theme defaults
 - Custom shortcodes include: audio, diagram, github, image
 
