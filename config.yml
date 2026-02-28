@@ -80,7 +80,7 @@ params:
       avatarURL: /images/me_homepage.webp
       social: true
     posts:
-      enable: true
+      enable: false
       paginate: 5
 
   # Social config
