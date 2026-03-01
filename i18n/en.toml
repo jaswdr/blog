@@ -1,0 +1,98 @@
+[aboutMe]
+other = "About Me"
+
+[aboutName]
+other = "About"
+
+[certainlyNotHere]
+other = "Certainly not here"
+
+[connectOnLinkedIn]
+other = "Connect on LinkedIn"
+
+[contactFormLabel]
+other = "Contact"
+
+[contactFormLabelEmailLabel]
+other = "Email"
+
+[contactFormLabelMessageLabel]
+other = "Message"
+
+[contactFormLabelNameLabel]
+other = "Name"
+
+[contactFormLabelSubjectLabel]
+other = "Subject"
+
+[contactFormSendBtnLabel]
+other = "Send Message"
+
+[contactInformation]
+other = "Contact Information"
+
+[demoImageAlt]
+other = "Demo Image"
+
+[downloadResume]
+other = "Download CV"
+
+[fullscreen]
+other = "Fullscreen"
+
+[galleryNotFound]
+other = "Gallery not found"
+
+[getInTouch]
+other = "Get in Touch"
+
+[goHome]
+other = "Go Home"
+
+[helloIm]
+other = "Hello, I'm"
+
+[iframeIdRequired]
+other = "iframe ID required"
+
+[interests]
+other = "Interests"
+
+[keyAchievements]
+other = "Key Achievements"
+
+[languages]
+other = "Languages"
+
+[learnMore]
+other = "Learn More"
+
+[more]
+other = "More"
+
+[pageNotFound]
+other = "Page Not Found"
+
+[pageNotFoundSubtitle]
+other = "The page you're looking for doesn't exist."
+
+[quickFacts]
+other = "Quick Facts"
+
+[relatedContent]
+other = "Related Content"
+
+[sendMeAMessage]
+other = "Send me a message"
+
+[viewCV]
+other = "View CV"
+
+[viewOnGithub]
+other = "View on GitHub"
+
+[vimeoPlayerTitle]
+other = "Vimeo video player"
+
+[youtubePlayerTitle]
+other = "YouTube video player"

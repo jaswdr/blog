@@ -4,19 +4,18 @@
 {{ $width := .Get "width" }}
 {{ $height := .Get "height" }}
 
-<style>
-div.image-center { text-align: center; }
-div.image-center img { border: 5px solid #555; }
-</style>
 <div class="image-center">
     <img 
       src="{{ $src }}"
       alt="{{ $alt }}"
       width="{{ $width }}"
       height="{{ $height }}"
-      decoding="async"/>
+      decoding="async"
+      class="mx-auto border-4 border-gray-500 rounded-lg shadow-md"
+    />
     {{ with $title }}
-      <br>
-      {{ . }} - <a href="{{ $src }}" target="_blank">Link</a>
+      <div class="mt-2 italic text-sm text-gray-600 dark:text-gray-400">
+        {{ . }} - <a href="{{ $src }}" target="_blank" class="text-primary hover:underline">Link</a>
+      </div>
     {{ end }}
 </div>

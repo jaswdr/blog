@@ -1,0 +1,63 @@
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  filter: true
+
+buttons:
+- name: All
+  filter: "all"
+- name: Language
+  filter: "language"
+- name: Infrastructure
+  filter: "infrastructure"
+- name: Database
+  filter: "database"
+
+skills:
+- name: Go
+  icon: "devicon-go-original-wordmark colored"
+  summary: "Main language for professional development. Expert in building scalable and high-performance services."
+  categories: ["language"]
+- name: Python
+  icon: "devicon-python-plain colored"
+  summary: "Extensive experience in backend development, automation, and data processing."
+  categories: ["language"]
+- name: TypeScript
+  icon: "devicon-typescript-plain colored"
+  summary: "Used for building modern web interfaces and backend services."
+  categories: ["language"]
+- name: Java
+  icon: "devicon-java-plain-wordmark colored"
+  summary: "Experience building high-scale services at AWS Lambda."
+  categories: ["language"]
+- name: Kubernetes
+  icon: "devicon-kubernetes-plain colored"
+  summary: "Expert in container orchestration, CRDs, and cloud-native architectures."
+  categories: ["infrastructure"]
+- name: AWS
+  icon: "devicon-amazonwebservices-plain-wordmark colored"
+  summary: "Deep expertise in AWS services, including Lambda, Networking, and Infrastructure as Code."
+  categories: ["infrastructure"]
+- name: Docker
+  icon: "devicon-docker-plain colored"
+  summary: "Experienced with containerization and multi-architecture build processes."
+  categories: ["infrastructure"]
+- name: MongoDB
+  icon: "devicon-mongodb-plain-wordmark colored"
+  summary: "Professional experience with MongoDB Atlas and document-based data modeling."
+  categories: ["database"]
+- name: PostgreSQL
+  icon: "devicon-postgresql-plain-wordmark colored"
+  summary: "Strong background in relational database design and optimization."
+  categories: ["database"]
+- name: Redis
+  icon: "devicon-redis-plain colored"
+  summary: "Used for high-performance caching and distributed state management."
+  categories: ["database"]
+- name: OpenTelemetry
+  icon: "fas fa-chart-line"
+  summary: "Implementing distributed tracing and deep observability in global services."
+  categories: ["infrastructure"]

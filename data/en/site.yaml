@@ -1,0 +1,13 @@
+copyright: "© 2026 | Jonathan Schweder"
+description: "Personal Website of Jonathan Schweder - Software Engineer @ MongoDB"
+openGraph:
+  title: "Jonathan Schweder | Software Engineer"
+  type: website
+  description: "Portfolio of Jonathan Schweder, Software Engineer at MongoDB specializing in Distributed Systems."
+  image: "images/me.webp"
+  url: "https://jaswdr.dev"
+customMenus:
+- name: CV
+  url: https://github.com/jaswdr/cv/raw/gh-pages/Jonathan_Schweder_CV.pdf
+  hideFromNavbar: false
+  showOnFooter: true

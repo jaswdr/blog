@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is Jonathan's personal blog built with Hugo static site generator using the DoIt theme. The blog features posts about AWS, development, machine learning, and various technical topics. It's deployed to AWS S3 and served at https://jaswdr.dev/.
+This is Jonathan's personal website built with Hugo static site generator using the DoIt theme. It's deployed to AWS S3 and served at https://jaswdr.dev/.
 
 ## Architecture
 
@@ -12,47 +12,47 @@ This is Jonathan's personal blog built with Hugo static site generator using the
 - **Theme**: DoIt (located in `themes/DoIt/` as a submodule)
 - **Configuration**: `config.yml` - main Hugo configuration with site settings, DoIt theme parameters, and social links
 - **Content Structure**:
-  - `content/posts/` - Blog posts in Markdown format
+  - `content/posts/` - Posts in Markdown format
   - `content/projects.md` - Projects page
   - `content/tools.md` - Developer tools page
   - `content/search.md` - Search functionality page
 - **Assets**: `static/` directory contains images, favicon, and other static assets
 - **Custom Layouts**: `layouts/` contains Hugo template overrides and custom shortcodes
-- **Post Archetype**: `archetypes/post.md` defines the template for new blog posts
+- **Post Archetype**: `archetypes/post.md` defines the template for new posts
 
 ## Common Commands
 
 ### Development
 ```bash
 # Start development server
-hugo serve
+make serve
 
-# Start development server with drafts
-hugo serve -D
+# Or run Hugo directly
+hugo serve
 ```
 
 ### Building
 ```bash
 # Build the site for production
-./scripts/build.bash
+make build
 
-# Or run Hugo directly with production settings
-hugo --baseURL https://jaswdr.dev --cleanDestinationDir --enableGitInfo --minify --noChmod --noTimes
+# Build Docker image
+make docker-build
 ```
 
 ### Deployment
 ```bash
-# Deploy to AWS S3 (requires AWS CLI and blog-publisher profile)
+# Deploy to AWS S3 (requires AWS CLI and website-publisher profile)
 ./scripts/deploy.bash
 ```
 
 ## Content Management
 
 ### Creating New Posts
-- Use Hugo's archetype system: `hugo new posts/post-name.md`
-- Posts use YAML frontmatter with standard Hugo parameters plus PaperMod-specific settings
+- Use the Makefile: `make new-post name=post-name`
+- Or Hugo directly: `hugo new posts/post-name.md`
+- Posts use YAML frontmatter with standard Hugo parameters plus theme-specific settings
 - All posts should include: title, date, tags, author, showToc, description
-- Images for posts go in `static/posts/post-name/` directory
 
 ### Site Configuration
 - Main configuration in `config.yml` uses YAML format
@@ -62,7 +62,6 @@ hugo --baseURL https://jaswdr.dev --cleanDestinationDir --enableGitInfo --minify
 
 ### Theme Customization
 - DoIt theme is included as a submodule in `themes/DoIt/`
-- DoIt theme documentation: https://github.com/HEIGE-PCloud/DoIt
 - Custom layouts and shortcodes in `layouts/` directory override theme defaults
 - Custom shortcodes include: audio, diagram, github, image
 

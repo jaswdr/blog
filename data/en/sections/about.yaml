@@ -1,0 +1,28 @@
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+designation: Software Engineer
+company:
+  name: MongoDB
+  url: "https://www.mongodb.com"
+summary: 'I am a Software Engineer at MongoDB specializing in Distributed Systems, API Design, and High-Performance Backend Services. With 15+ years of experience, I have a proven track record of designing and scaling systems to billions of requests, focusing on performance, reliability, and elegant API design. My expertise spans across AWS and MongoDB, where I focus on high-scale backend architectures, distributed systems, and modern AI integration.'
+
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "me@jaswdr.dev"
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/jaswdr"
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://linkedin.com/in/jaswdr"
+
+resourceLinks:
+- title: "View CV"
+  url: "/Jonathan_Schweder_CV.pdf"

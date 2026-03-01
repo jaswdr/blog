@@ -1,0 +1,13 @@
+name: "Jonathan Schweder"
+nickname: "Jonathan"
+greeting: "Hello, I am"
+image: "images/me.webp"
+contactInfo:
+  email: "me@jaswdr.dev"
+  github: jaswdr
+  linkedin: jaswdr
+summary:
+  - Software Engineer @ MongoDB
+  - Distributed Systems Specialist
+  - 15+ years of experience
+  - Expert in Go, Python, and Java

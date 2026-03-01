@@ -1,42 +1,36 @@
-<h1 align=center>Personal Blog | <a href="https://jaswdr.dev/" rel="nofollow">jaswdr.dev</a></h1>
+# Jonathan Schweder - Personal Website
 
-<p align="center">
-  <kbd><img src="https://github.com/jaswdr/blog/blob/master/homepage.png?raw=true" alt="Mockup image" title="Mockup"/></kbd>
-</p>
+Personal website built with Hugo and the [DoIt](https://github.com/HEIGE-PULT/DoIt) theme.
 
----
-## Install/Update 📥
+## Overview
+This repository contains the source code for [jaswdr.dev](https://jaswdr.dev/).
 
+## Local Development
+
+### Prerequisites
+- [Hugo Extended](https://gohugo.io/installation/)
+- [Docker](https://docs.docker.com/get-docker/)
+- [Make](https://www.gnu.org/software/make/)
+
+### Running Locally
 ```bash
-$ git clone --recursive https://github.com/jaswdr/blog
-$ cd ./blog
-$ hugo serve
+# Clone the repository
+git clone --recursive https://github.com/jaswdr/website
+cd website
 
-                   | EN
--------------------+-----
-  Pages            | 26
-  Paginator pages  |  0
-  Non-page files   |  0
-  Static files     |  2
-  Processed images |  0
-  Aliases          |  0
-  Sitemaps         |  1
-  Cleaned          |  0
-
-Built in 48 ms
-Watching for changes in /.../{archetypes,content,layouts,static,themes}
-Watching for config changes in /.../config.toml
-Environment: "development"
-Serving pages from memory
-Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
+# Run development server
+make serve
 ```
 
-Then access [http://localhost:1313/](http://localhost:1313/)
+## Deployment
+The site is built and deployed as a set of static files.
 
-## [Pagespeed Insights](https://pagespeed.web.dev/report?url=https://jaswdr.dev/)
+```bash
+make build
+```
 
-## License
-
-GNU GPL v3.0
+## Project Structure
+- `content/`: Pages and sections.
+- `layouts/`: Custom Hugo templates.
+- `static/`: Static assets (images, fonts).
+- `themes/`: Hugo theme submodules.

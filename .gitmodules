@@ -1,3 +1,6 @@
-[submodule "themes/DoIt"]
-	path = themes/DoIt
-	url = https://github.com/HEIGE-PCloud/DoIt.git
+[submodule "themes/careercanvas"]
+	path = themes/careercanvas
+	url = https://github.com/felipecordero/careercanvas.git
+[submodule "themes/toha"]
+	path = themes/toha
+	url = https://github.com/hugo-toha/toha.git

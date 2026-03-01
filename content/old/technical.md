@@ -1,0 +1,43 @@
+---
+title: "Technical Stack"
+intro: "The tools, languages, and platforms I use to build high-scale distributed systems."
+technical_groups:
+  - title: "Languages"
+    skills:
+      - name: "Go"
+        devicon_name: "go"
+      - name: "Python"
+        devicon_name: "python"
+      - name: "TypeScript"
+        devicon_name: "typescript"
+      - name: "Java"
+        devicon_name: "java"
+      - name: "Node.js"
+        devicon_name: "nodejs"
+  - title: "Infrastructure"
+    skills:
+      - name: "AWS"
+        devicon_name: "amazonwebservices"
+      - name: "Kubernetes"
+        devicon_name: "kubernetes"
+      - name: "Docker"
+        devicon_name: "docker"
+      - name: "Terraform"
+        devicon_name: "terraform"
+      - name: "Ansible"
+        devicon_name: "ansible"
+  - title: "Databases"
+    skills:
+      - name: "MongoDB"
+        devicon_name: "mongodb"
+      - name: "PostgreSQL"
+        devicon_name: "postgresql"
+      - name: "Redis"
+        devicon_name: "redis"
+  - title: "Observability"
+    skills:
+      - name: "Prometheus"
+        devicon_name: "prometheus"
+      - name: "Grafana"
+        devicon_name: "grafana"
+---
