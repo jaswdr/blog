@@ -54,7 +54,13 @@ params:
       enable: false
 
     analytics:
-      enable: false
+      enable: true
+      services:
+        posthog:
+          apiKey: phc_4gAFRm1jftCJsx1fCyf3zewyNx7Py6QA9ILKj0H8S1f
+          host: https://eu.i.posthog.com
+          options:
+            defaults: "2026-01-30"
 
     toc:
       enable: true
