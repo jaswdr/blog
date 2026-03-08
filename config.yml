@@ -58,7 +58,7 @@ params:
       services:
         posthog:
           apiKey: phc_4gAFRm1jftCJsx1fCyf3zewyNx7Py6QA9ILKj0H8S1f
-          host: https://eu.i.posthog.com
+          host: /ingest
           options:
             defaults: "2026-01-30"
 
