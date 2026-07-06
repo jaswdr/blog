@@ -9,7 +9,7 @@ experiences:
 - company:
     name: Remote
     url: "https://remote.com"
-    location: Remote
+    location: Remote, Brazil
     overview: Remote is a global HR platform for hiring, managing, and paying distributed teams.
   positions:
   - designation: Senior Backend Engineer
@@ -66,7 +66,7 @@ experiences:
 - company:
     name: Pantacor
     url: "https://www.pantacor.com"
-    location: Remote
+    location: Remote, Brazil
     overview: IoT fleet management platform.
   positions:
   - designation: Software Engineer - IoT & Infrastructure
