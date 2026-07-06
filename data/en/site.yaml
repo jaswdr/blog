@@ -1,9 +1,9 @@
 copyright: "© 2026 | Jonathan Schweder"
-description: "Personal Website of Jonathan Schweder - Software Engineer @ MongoDB"
+description: "Personal Website of Jonathan Schweder - Senior Backend Engineer @ Remote"
 openGraph:
-  title: "Jonathan Schweder | Software Engineer"
+  title: "Jonathan Schweder | Senior Backend Engineer"
   type: website
-  description: "Portfolio of Jonathan Schweder, Software Engineer at MongoDB specializing in Distributed Systems."
+  description: "Portfolio of Jonathan Schweder, Senior Backend Engineer at Remote specializing in Distributed Systems."
   image: "images/me.webp"
   url: "https://jaswdr.dev"
 customMenus:

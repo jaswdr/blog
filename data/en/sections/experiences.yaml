@@ -7,6 +7,21 @@ section:
 
 experiences:
 - company:
+    name: Remote
+    url: "https://remote.com"
+    location: Remote
+    overview: Remote is a global HR platform for hiring, managing, and paying distributed teams.
+  positions:
+  - designation: Senior Backend Engineer
+    start: May 2026
+    responsibilities:
+    - Design and build payroll and payments backend services using Elixir and Phoenix, supporting global payroll operations across many countries.
+    - Develop APIs and integrations with payment providers and banking partners, focusing on correctness, idempotency, and auditability of money movement.
+    - Improve reliability and observability of payment pipelines through metrics, distributed tracing, and automated reconciliation.
+    - Collaborate with product and compliance teams to ship features that operate across multiple legal jurisdictions.
+    - Mentor engineers and lead design reviews for backend services, upholding high engineering standards.
+
+- company:
     name: MongoDB
     url: "https://www.mongodb.com"
     location: Remote
@@ -14,6 +29,7 @@ experiences:
   positions:
   - designation: Software Engineer
     start: Apr 2025
+    end: May 2026
     responsibilities:
     - Build internal self-service APIs and distributed tools using Go and Kubernetes to accelerate development velocity and automate infrastructure operations.
     - Design and implement high-performance backend services leveraging Crossplane and Argo CD for automated resource management.

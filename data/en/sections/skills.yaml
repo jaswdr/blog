@@ -17,6 +17,10 @@ buttons:
   filter: "database"
 
 skills:
+- name: Elixir
+  icon: "devicon-elixir-plain colored"
+  summary: "Building payroll and payments backend services with Elixir and Phoenix at Remote."
+  categories: ["language"]
 - name: Go
   icon: "devicon-go-original-wordmark colored"
   summary: "Main language for professional development. Expert in building scalable and high-performance services."

@@ -6,11 +6,11 @@ section:
   showOnNavbar: true
   template: sections/about.html
 
-designation: Software Engineer
+designation: Senior Backend Engineer
 company:
-  name: MongoDB
-  url: "https://www.mongodb.com"
-summary: 'I am a Software Engineer at MongoDB specializing in Distributed Systems, API Design, and High-Performance Backend Services. With 15+ years of experience, I have a proven track record of designing and scaling systems to billions of requests, focusing on performance, reliability, and elegant API design. My expertise spans across AWS and MongoDB, where I focus on high-scale backend architectures, distributed systems, and modern AI integration.'
+  name: Remote
+  url: "https://remote.com"
+summary: 'I am a Senior Backend Engineer at Remote, building the payroll and payments backbone of a global HR platform with Elixir and Phoenix. With 15+ years of experience across Remote, AWS, and MongoDB, I have a proven track record of designing and scaling distributed systems to billions of requests, focusing on correctness, reliability, and elegant API design. My work today centers on money movement at global scale: payment integrations, auditability, and high-performance backend services.'
 
 socialLinks:
 - name: Email
