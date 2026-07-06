@@ -9,14 +9,19 @@ section:
 buttons:
 - name: All
   filter: "all"
+- name: Architecture
+  filter: "architecture"
 - name: Language
   filter: "language"
 - name: Infrastructure
   filter: "infrastructure"
 - name: Database
   filter: "database"
+- name: AI
+  filter: "ai"
 
 skills:
+# architecture
 - name: Distributed Systems
   icon: "fas fa-network-wired"
   summary: "Designing and scaling systems to billions of requests at AWS, MongoDB, and Remote."
@@ -33,6 +38,40 @@ skills:
   icon: "fas fa-cubes"
   summary: "Led monolith-to-microservices migrations and built service-oriented platforms."
   categories: ["architecture"]
+- name: System Design
+  icon: "fas fa-drafting-compass"
+  summary: "Leading design reviews for global services across teams and jurisdictions."
+  categories: ["architecture"]
+- name: Serverless Architecture
+  icon: "fas fa-bolt"
+  summary: "Owned control-plane services for AWS Lambda, one of the largest serverless platforms."
+  categories: ["architecture"]
+- name: High Availability
+  icon: "fas fa-heartbeat"
+  summary: "Operating services with strict availability targets across multiple regions."
+  categories: ["architecture"]
+- name: Fault Tolerance
+  icon: "fas fa-shield-alt"
+  summary: "Designing systems that degrade gracefully; rapid traffic-shifting during network events."
+  categories: ["architecture"]
+- name: Capacity Planning
+  icon: "fas fa-chart-area"
+  summary: "Architected automated capacity deployment used in AWS region launches."
+  categories: ["architecture"]
+- name: Multi-Region Deployments
+  icon: "fas fa-globe"
+  summary: "Accelerated AWS region launches by 30% through deployment automation."
+  categories: ["architecture"]
+- name: Caching Strategies
+  icon: "fas fa-layer-group"
+  summary: "High-performance caching and distributed state with Redis and CDN edge caches."
+  categories: ["architecture"]
+- name: Observability
+  icon: "fas fa-eye"
+  summary: "Tracing, metrics, and alerting as first-class design concerns in every service."
+  categories: ["architecture"]
+
+# languages
 - name: Elixir
   icon: "devicon-elixir-plain colored"
   summary: "Building payroll processing backend services with Elixir and Phoenix at Remote."
@@ -57,6 +96,32 @@ skills:
   icon: "devicon-java-plain-wordmark colored"
   summary: "Experience building high-scale services at AWS Lambda."
   categories: ["language"]
+- name: JavaScript
+  icon: "devicon-javascript-plain colored"
+  summary: "Frontend and Node.js backend work across several products."
+  categories: ["language"]
+- name: Node.js
+  icon: "devicon-nodejs-plain colored"
+  summary: "Backend services and integrations at Eventials and Bludata."
+  categories: ["language"]
+- name: Ruby
+  icon: "devicon-ruby-plain colored"
+  summary: "Infrastructure automation with AWS CDK at AWS Networking."
+  categories: ["language"]
+- name: PHP
+  icon: "devicon-php-plain colored"
+  summary: "Web applications for government agencies using Laravel."
+  categories: ["language"]
+- name: SQL
+  icon: "fas fa-table"
+  summary: "Schema design and queries across PostgreSQL, Sybase, and analytics engines."
+  categories: ["language"]
+- name: Bash
+  icon: "devicon-bash-plain colored"
+  summary: "Automation and tooling for Linux server operations."
+  categories: ["language"]
+
+# infrastructure
 - name: Kubernetes
   icon: "devicon-kubernetes-plain colored"
   summary: "Expert in container orchestration, CRDs, and cloud-native architectures."
@@ -65,10 +130,56 @@ skills:
   icon: "devicon-amazonwebservices-plain-wordmark colored"
   summary: "Deep expertise in AWS services, including Lambda, Networking, and Infrastructure as Code."
   categories: ["infrastructure"]
+- name: Google Cloud
+  icon: "devicon-googlecloud-plain colored"
+  summary: "Managed Kubernetes clusters on GCP at Pantacor."
+  categories: ["infrastructure"]
 - name: Docker
   icon: "devicon-docker-plain colored"
   summary: "Experienced with containerization and multi-architecture build processes."
   categories: ["infrastructure"]
+- name: Linux
+  icon: "devicon-linux-plain colored"
+  summary: "Server administration, Embedded Linux applications, and production operations."
+  categories: ["infrastructure"]
+- name: Terraform & IaC
+  icon: "devicon-terraform-plain colored"
+  summary: "Infrastructure as Code with Terraform, AWS CDK, and CloudFormation across global deployments."
+  categories: ["infrastructure"]
+- name: AWS CDK
+  icon: "fas fa-code"
+  summary: "Automated global compute capacity deployment at AWS Networking."
+  categories: ["infrastructure"]
+- name: CloudFormation
+  icon: "fas fa-file-code"
+  summary: "Automated capacity deployment system for AWS region launches."
+  categories: ["infrastructure"]
+- name: Argo CD
+  icon: "fas fa-sync"
+  summary: "GitOps-based deployment automation for internal platforms at MongoDB."
+  categories: ["infrastructure"]
+- name: Crossplane
+  icon: "fas fa-random"
+  summary: "Automated cloud resource management via Kubernetes control planes at MongoDB."
+  categories: ["infrastructure"]
+- name: CI/CD
+  icon: "fas fa-rocket"
+  summary: "Automated build, test, and deployment pipelines from Jenkins to modern GitOps."
+  categories: ["infrastructure"]
+- name: Jenkins
+  icon: "devicon-jenkins-plain colored"
+  summary: "Deployment pipelines reducing manual steps and deployment failures."
+  categories: ["infrastructure"]
+- name: OpenTelemetry
+  icon: "fas fa-chart-line"
+  summary: "Implementing distributed tracing and deep observability in global services."
+  categories: ["infrastructure"]
+- name: Grafana & Prometheus
+  icon: "devicon-grafana-original colored"
+  summary: "Metrics, dashboards, and alerting for production services."
+  categories: ["infrastructure"]
+
+# data
 - name: MongoDB
   icon: "devicon-mongodb-plain-wordmark colored"
   summary: "Professional experience with MongoDB Atlas and document-based data modeling."
@@ -97,23 +208,65 @@ skills:
   icon: "fas fa-database"
   summary: "Schema design and query tuning for high-volume transactional workloads with strict ACID requirements."
   categories: ["database"]
-- name: OpenTelemetry
-  icon: "fas fa-chart-line"
-  summary: "Implementing distributed tracing and deep observability in global services."
-  categories: ["infrastructure"]
-- name: Grafana & Prometheus
-  icon: "devicon-grafana-original colored"
-  summary: "Metrics, dashboards, and alerting for production services."
-  categories: ["infrastructure"]
-- name: Terraform & IaC
-  icon: "devicon-terraform-plain colored"
-  summary: "Infrastructure as Code with Terraform, AWS CDK, and CloudFormation across global deployments."
-  categories: ["infrastructure"]
-- name: CI/CD
-  icon: "fas fa-rocket"
-  summary: "Automated build, test, and deployment pipelines from Jenkins to modern GitOps with Argo CD."
-  categories: ["infrastructure"]
+- name: AWS Glue
+  icon: "fas fa-cogs"
+  summary: "ETL pipelines processing network telemetry at AWS."
+  categories: ["database"]
+- name: AWS EMR
+  icon: "fas fa-server"
+  summary: "Large-scale data processing for network event detection."
+  categories: ["database"]
+- name: AWS Athena
+  icon: "fas fa-search"
+  summary: "High-cardinality monitoring queries, reducing MTTA by 40%."
+  categories: ["database"]
+- name: Data Pipelines
+  icon: "fas fa-project-diagram"
+  summary: "End-to-end ETL and streaming pipelines for telemetry and business data."
+  categories: ["database"]
+- name: Sybase
+  icon: "fas fa-hdd"
+  summary: "Relational and columnar (IQ) database work in ERP and government systems."
+  categories: ["database"]
+
+# ai
 - name: LLM Integration
   icon: "fas fa-robot"
   summary: "Integrating OpenAI and Anthropic APIs into production tools for incident resolution and automation."
+  categories: ["ai"]
+- name: OpenAI API
+  icon: "fas fa-brain"
+  summary: "Production integrations for internal tooling at MongoDB."
+  categories: ["ai"]
+- name: Anthropic API
+  icon: "fas fa-comment-dots"
+  summary: "LLM-backed features for incident resolution and self-service tools."
+  categories: ["ai"]
+- name: Prompt Engineering
+  icon: "fas fa-terminal"
+  summary: "Designing reliable prompts and guardrails for production LLM features."
+  categories: ["ai"]
+- name: Machine Learning
+  icon: "fas fa-chart-bar"
+  summary: "Traditional ML techniques combined with LLMs for ranking systems at AWS."
+  categories: ["ai"]
+- name: ML Ranking Systems
+  icon: "fas fa-sort-amount-down"
+  summary: "Built a ranking algorithm optimizing network engineers' work through hundreds of daily tickets."
+  categories: ["ai"]
+- name: LLM-Powered Automation
+  icon: "fas fa-magic"
+  summary: "Automating operational workflows with LLM-backed services."
+  categories: ["ai"]
+- name: AI-Assisted Incident Response
+  icon: "fas fa-fire-extinguisher"
+  summary: "LLM tooling that improves incident resolution and mean time to mitigate."
+  categories: ["ai"]
+- name: Ticket Classification
+  icon: "fas fa-tags"
+  summary: "Automated ticket prioritization reducing large-scale events by 20% at AWS."
+  categories: ["ai"]
+- name: Streamlit
+  icon: "fas fa-desktop"
+  summary: "Interactive data and ML dashboards for IoT fleet monitoring."
   categories: ["ai"]
