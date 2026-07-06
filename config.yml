@@ -16,7 +16,7 @@ outputFormats:
     isPlainText: true
   resume:
     mediaType: application/json
-    baseName: resume
+    baseName: cv
     isPlainText: true
 
 outputs:

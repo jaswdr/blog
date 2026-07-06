@@ -9,7 +9,7 @@
 
 - Website: {{ .Site.BaseURL }}
 - Full CV (plain text): {{ .Site.BaseURL }}cv.txt
-- Resume (JSON Resume format): {{ .Site.BaseURL }}resume.json
+- Resume (JSON Resume format): {{ .Site.BaseURL }}cv.json
 - CV (PDF): {{ (index $d.site.customMenus 0).url }}
 - GitHub: https://github.com/{{ $author.contactInfo.github }}
 - LinkedIn: https://linkedin.com/in/{{ $author.contactInfo.linkedin }}
