@@ -1,0 +1,46 @@
+{{- $d := index hugo.Data "en" -}}
+{{- $author := $d.author -}}
+{{- $about := $d.sections.about -}}
+{{- $work := slice -}}
+{{- range $d.sections.experiences.experiences -}}
+{{- $c := .company -}}
+{{- range .positions -}}
+{{- $w := dict
+  "name" $c.name
+  "location" $c.location
+  "description" $c.overview
+  "position" .designation
+  "startDate" (partial "isodate.html" .start)
+  "highlights" .responsibilities -}}
+{{- with $c.url }}{{ $w = merge $w (dict "url" .) }}{{ end -}}
+{{- with .end }}{{ $w = merge $w (dict "endDate" (partial "isodate.html" .)) }}{{ end -}}
+{{- $work = $work | append $w -}}
+{{- end -}}
+{{- end -}}
+{{- $groups := slice
+  (dict "key" "architecture" "label" "Architecture")
+  (dict "key" "language" "label" "Languages")
+  (dict "key" "infrastructure" "label" "Infrastructure")
+  (dict "key" "database" "label" "Data")
+  (dict "key" "ai" "label" "AI") -}}
+{{- $skillGroups := slice -}}
+{{- range $groups -}}
+{{- $g := .key -}}
+{{- $kw := slice -}}
+{{- range $d.sections.skills.skills }}{{ if in .categories $g }}{{ $kw = $kw | append .name }}{{ end }}{{ end -}}
+{{- $skillGroups = $skillGroups | append (dict "name" .label "keywords" $kw) -}}
+{{- end -}}
+{{- $resume := dict
+  "$schema" "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
+  "basics" (dict
+    "name" $author.name
+    "label" $about.designation
+    "email" $author.contactInfo.email
+    "url" .Site.BaseURL
+    "summary" $about.summary
+    "profiles" (slice
+      (dict "network" "GitHub" "username" $author.contactInfo.github "url" (printf "https://github.com/%s" $author.contactInfo.github))
+      (dict "network" "LinkedIn" "username" $author.contactInfo.linkedin "url" (printf "https://linkedin.com/in/%s" $author.contactInfo.linkedin))))
+  "work" $work
+  "skills" $skillGroups -}}
+{{- $resume | jsonify (dict "indent" "  ") -}}

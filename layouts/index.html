@@ -20,6 +20,7 @@
 <meta property="og:image" content="{{ $portrait.Permalink }}">
 <meta property="og:url" content="{{ .Site.BaseURL }}">
 {{- $skillNames := slice }}{{ range $skills.skills }}{{ $skillNames = $skillNames | append .name }}{{ end }}
+{{- $pastOrgs := slice }}{{ range after 1 $exp.experiences }}{{ $o := dict "@type" "Organization" "name" .company.name }}{{ with .company.url }}{{ $o = merge $o (dict "url" .) }}{{ end }}{{ $pastOrgs = $pastOrgs | append $o }}{{ end }}
 {{- $jsonld := dict
   "@context" "https://schema.org"
   "@type" "Person"
@@ -30,6 +31,8 @@
   "image" $portrait.Permalink
   "email" (printf "mailto:%s" $author.contactInfo.email)
   "worksFor" (dict "@type" "Organization" "name" $about.company.name "url" $about.company.url)
+  "hasOccupation" (dict "@type" "Occupation" "name" $about.designation)
+  "alumniOf" $pastOrgs
   "knowsAbout" $skillNames
   "sameAs" (slice
     (printf "https://github.com/%s" $author.contactInfo.github)
@@ -159,14 +162,14 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
     <article class="job">
       {{ $first := index .positions 0 }}
       {{ $last := index .positions (sub (len .positions) 1) }}
-      <div class="job-when">{{ $last.start }} –
-{{ $first.end | default "present" }}</div>
+      <div class="job-when"><time datetime="{{ partial "isodate.html" $last.start }}">{{ $last.start }}</time> –
+{{ with $first.end }}<time datetime="{{ partial "isodate.html" . }}">{{ . }}</time>{{ else }}present{{ end }}</div>
       <div class="job-body">
         <h3>{{ if .company.url }}<a href="{{ .company.url }}">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h3><span class="loc">{{ .company.location }}</span>
         {{ range .positions }}
         <div class="pos">
           <strong>{{ .designation }}</strong>
-          <span class="pos-when">{{ .start }} – {{ .end | default "present" }}</span>
+          <span class="pos-when"><time datetime="{{ partial "isodate.html" .start }}">{{ .start }}</time> – {{ with .end }}<time datetime="{{ partial "isodate.html" . }}">{{ . }}</time>{{ else }}present{{ end }}</span>
           <ul>
             {{ range .responsibilities }}<li>{{ . }}</li>{{ end }}
           </ul>

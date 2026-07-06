@@ -5,6 +5,23 @@ defaultContentLanguage: en
 
 disableKinds: ["taxonomy", "term", "section", "page", "RSS"]
 
+outputFormats:
+  llms:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
+  cv:
+    mediaType: text/plain
+    baseName: cv
+    isPlainText: true
+  resume:
+    mediaType: application/json
+    baseName: resume
+    isPlainText: true
+
+outputs:
+  home: [HTML, llms, cv, resume]
+
 params:
   posthog:
     apiKey: phc_4gAFRm1jftCJsx1fCyf3zewyNx7Py6QA9ILKj0H8S1f

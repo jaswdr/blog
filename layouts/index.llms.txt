@@ -1,0 +1,28 @@
+{{- $d := index hugo.Data "en" -}}
+{{- $author := $d.author -}}
+{{- $about := $d.sections.about -}}
+# {{ $author.name }}
+
+> {{ $about.designation }} at {{ $about.company.name }} ({{ $about.company.url }}). {{ $about.summary }}
+
+## Links
+
+- Website: {{ .Site.BaseURL }}
+- Full CV (plain text): {{ .Site.BaseURL }}cv.txt
+- Resume (JSON Resume format): {{ .Site.BaseURL }}resume.json
+- CV (PDF): {{ (index $d.site.customMenus 0).url }}
+- GitHub: https://github.com/{{ $author.contactInfo.github }}
+- LinkedIn: https://linkedin.com/in/{{ $author.contactInfo.linkedin }}
+- Email: {{ $author.contactInfo.email }}
+
+## Experience
+
+{{ range $d.sections.experiences.experiences -}}
+{{ $c := .company -}}
+{{ range .positions -}}
+- {{ .designation }}, {{ $c.name }} ({{ .start }} – {{ .end | default "present" }}), {{ $c.location }}
+{{ end -}}
+{{ end }}
+## Skills
+
+{{ $names := slice }}{{ range $d.sections.skills.skills }}{{ $names = $names | append .name }}{{ end }}{{ delimit $names ", " }}
