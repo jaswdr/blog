@@ -5,6 +5,13 @@
 {{- $exp := $d.sections.experiences -}}
 {{- $skills := $d.sections.skills -}}
 {{- $portrait := (resources.Get "images/me.webp").Process "resize 320x320 webp q80" -}}
+{{- $face := (resources.Get "images/me.webp").Process "resize 300x300" -}}
+{{- $card := (resources.Get "og-base.png").Filter
+      (images.Overlay $face 90 165)
+      (images.Text $author.name (dict "color" "#1b1c1e" "size" 74 "x" 460 "y" 220))
+      (images.Text (printf "%s @ %s" $about.designation $about.company.name) (dict "color" "#66675f" "size" 34 "x" 462 "y" 330))
+      (images.Text (strings.TrimSuffix "/" (strings.TrimPrefix "https://" .Site.BaseURL)) (dict "color" "#9a5b0f" "size" 30 "x" 462 "y" 400)) -}}
+{{- $card = $card.Process "jpg q88" -}}
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -18,15 +25,24 @@
 <link rel="alternate" type="application/pdf" href="{{ (index $d.site.customMenus 0).url }}" title="CV (PDF)">
 <link rel="icon" href="/images/favicon_32x32.webp" type="image/webp">
 <link rel="apple-touch-icon" href="/images/favicon_apple_touch.webp">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:title" content="{{ $d.site.openGraph.title }}">
 <meta property="og:type" content="website">
 <meta property="og:description" content="{{ $d.site.openGraph.description }}">
-<meta property="og:image" content="{{ $portrait.Permalink }}">
+<meta property="og:image" content="{{ $card.Permalink }}">
+<meta property="og:image:width" content="{{ $card.Width }}">
+<meta property="og:image:height" content="{{ $card.Height }}">
+<meta property="og:image:alt" content="{{ $author.name }}, {{ $about.designation }} at {{ $about.company.name }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="{{ .Site.BaseURL }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $d.site.openGraph.title }}">
+<meta name="twitter:description" content="{{ $d.site.openGraph.description }}">
+<meta name="twitter:image" content="{{ $card.Permalink }}">
 {{- $skillNames := slice }}{{ range $skills.skills }}{{ $skillNames = $skillNames | append .name }}{{ end }}
 {{- $pastOrgs := slice }}{{ range after 1 $exp.experiences }}{{ $o := dict "@type" "Organization" "name" .company.name }}{{ with .company.url }}{{ $o = merge $o (dict "url" .) }}{{ end }}{{ $pastOrgs = $pastOrgs | append $o }}{{ end }}
-{{- $jsonld := dict
-  "@context" "https://schema.org"
+{{- $person := dict
   "@type" "Person"
   "name" $author.name
   "jobTitle" $about.designation
@@ -41,6 +57,12 @@
   "sameAs" (slice
     (printf "https://github.com/%s" $author.contactInfo.github)
     (printf "https://linkedin.com/in/%s" $author.contactInfo.linkedin))
+}}
+{{- $jsonld := dict
+  "@context" "https://schema.org"
+  "@type" "ProfilePage"
+  "dateModified" (now.Format "2006-01-02")
+  "mainEntity" $person
 }}
 <script type="application/ld+json">{{ $jsonld | jsonify | safeJS }}</script>
 <link rel="preload" as="image" href="{{ $portrait.RelPermalink }}" fetchpriority="high">
