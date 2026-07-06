@@ -22,105 +22,143 @@
 <link rel="preload" as="image" href="{{ $portrait.RelPermalink }}" fetchpriority="high">
 <style>
 :root{
-  --bg:#fbfaf8;--fg:#1c1c1c;--muted:#6b6b6b;--line:#e6e2da;--accent:#0b6e4f;--card:#ffffff;
+  --paper:#f5f4ef;--ink:#1b1c1e;--muted:#66675f;--line:#dddcd2;
+  --accent:#9a5b0f;--key:#7a7b72;
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#12130f;--fg:#e8e6e1;--muted:#9a988f;--line:#2a2b25;--accent:#5ec49a;--card:#1a1b16}
+  :root{--paper:#151619;--ink:#dcdad2;--muted:#8f9089;--line:#2b2c30;
+    --accent:#dca55c;--key:#75766f}
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
 body{
-  background:var(--bg);color:var(--fg);
+  background:var(--paper);color:var(--ink);
   font:16px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   -webkit-font-smoothing:antialiased;
 }
-main{max-width:44rem;margin:0 auto;padding:4rem 1.25rem 2rem}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-header{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
-header img{border-radius:50%;width:120px;height:120px;object-fit:cover;border:2px solid var(--line)}
-h1{font-size:2rem;line-height:1.2;letter-spacing:-.02em}
-.role{color:var(--muted);margin-top:.25rem}
-nav.links{display:flex;gap:1rem;margin-top:.75rem;flex-wrap:wrap;font-size:.95rem}
-section{margin-top:3.5rem}
-h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
-   border-bottom:1px solid var(--line);padding-bottom:.5rem;margin-bottom:1.5rem}
-.about p{max-width:60ch}
-.job{margin-bottom:2.25rem}
-.job-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
-.job-head h3{font-size:1.05rem}
-.job .loc{color:var(--muted);font-size:.85rem;white-space:nowrap}
-.pos{margin-top:.75rem;padding-left:1rem;border-left:2px solid var(--line)}
-.pos+.pos{margin-top:1.25rem}
-.pos-head{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.pos-head strong{font-weight:600}
-.dates{color:var(--muted);font-size:.85rem;white-space:nowrap}
-.pos ul{margin:.5rem 0 0 1.1rem;padding:0}
-.pos li{margin-top:.3rem;color:var(--fg)}
-.pos li::marker{color:var(--muted)}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0}
-.chips li{
-  background:var(--card);border:1px solid var(--line);border-radius:999px;
-  padding:.3rem .85rem;font-size:.9rem;
+main{max-width:46rem;margin:0 auto;padding:4.5rem 1.5rem 2rem}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--accent)}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+/* header */
+header{display:flex;gap:1.75rem;align-items:center;flex-wrap:wrap}
+header img{width:108px;height:108px;object-fit:cover;border-radius:26%;}
+h1{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Charter,Georgia,serif;
+   font-size:2.5rem;font-weight:500;line-height:1.1;letter-spacing:-.015em}
+.role{color:var(--muted);margin-top:.4rem}
+.role a{font-weight:500}
+nav{display:flex;gap:1.25rem;margin-top:.9rem;flex-wrap:wrap;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.82rem}
+nav a{text-decoration:none;color:var(--accent)}
+nav a:hover{text-decoration:underline}
+/* sections: yaml-key headings */
+section{margin-top:4rem}
+h2{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+   font-size:.85rem;font-weight:400;color:var(--key);margin-bottom:1.5rem}
+h2::after{content:":";color:var(--accent);font-weight:600}
+.about p{max-width:62ch;font-size:1.05rem;line-height:1.7}
+/* experience: mono date gutter */
+.job{display:grid;grid-template-columns:8.5rem 1fr;gap:0 1.5rem;margin-bottom:2.5rem}
+.job-when{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  font-size:.78rem;color:var(--muted);padding-top:.35rem;text-align:right;
+  font-variant-numeric:tabular-nums;white-space:pre-line}
+.job-body h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Charter,Georgia,serif;
+  font-size:1.25rem;font-weight:500;display:inline}
+.job-body h3 a{text-decoration:none}
+.job-body h3 a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+.loc{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  font-size:.75rem;color:var(--muted);margin-left:.6rem}
+.pos+.pos{margin-top:1.4rem;padding-top:1.4rem;border-top:1px dashed var(--line)}
+.pos strong{font-weight:600;display:block;margin-top:.35rem}
+.pos .pos-when{display:none;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  font-size:.75rem;color:var(--muted)}
+.pos ul{margin:.6rem 0 0;padding-left:1.1rem}
+.pos li{margin-top:.35rem}
+.pos li::marker{color:var(--accent)}
+/* skills: grouped key/value lines */
+dl{display:grid;grid-template-columns:8.5rem 1fr;gap:.8rem 1.5rem}
+dt{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+   font-size:.78rem;color:var(--muted);text-align:right;padding-top:.2rem}
+dt::after{content:":";color:var(--accent)}
+dd{line-height:1.9}
+dd span{white-space:nowrap}
+dd span+span::before{content:"·";color:var(--accent);margin:0 .5em;white-space:normal}
+footer{margin-top:4.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.75rem;color:var(--muted)}
+footer a{color:inherit;text-decoration:none}
+footer a:hover{color:var(--accent)}
+@media (max-width:600px){
+  main{padding-top:2.75rem}
+  h1{font-size:1.9rem}
+  header img{width:88px;height:88px}
+  .job,dl{grid-template-columns:1fr;gap:.2rem 0}
+  .job-when{display:none}
+  .pos .pos-when{display:block;margin-top:.15rem}
+  dt{text-align:left;padding-top:.4rem}
 }
-footer{margin-top:4rem;padding:1.5rem 0 0;border-top:1px solid var(--line);
-  color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-@media (max-width:480px){
-  main{padding-top:2.5rem}
-  header img{width:96px;height:96px}
-  h1{font-size:1.6rem}
-}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 </style>
 </head>
 <body>
 <main>
   <header>
-    <img src="{{ $portrait.RelPermalink }}" alt="{{ $author.name }}" width="120" height="120" fetchpriority="high">
+    <img src="{{ $portrait.RelPermalink }}" alt="{{ $author.name }}" width="108" height="108" fetchpriority="high">
     <div>
       <h1>{{ $author.name }}</h1>
       <p class="role">{{ $about.designation }} @ <a href="{{ $about.company.url }}">{{ $about.company.name }}</a></p>
-      <nav class="links">
-        <a href="mailto:{{ $author.contactInfo.email }}">Email</a>
-        <a href="https://github.com/{{ $author.contactInfo.github }}">GitHub</a>
-        <a href="https://linkedin.com/in/{{ $author.contactInfo.linkedin }}">LinkedIn</a>
-        {{ range $d.site.customMenus }}<a href="{{ .url }}">{{ .name }} ↓</a>{{ end }}
+      <nav>
+        <a href="mailto:{{ $author.contactInfo.email }}">email</a>
+        <a href="https://github.com/{{ $author.contactInfo.github }}">github</a>
+        <a href="https://linkedin.com/in/{{ $author.contactInfo.linkedin }}">linkedin</a>
+        {{ range $d.site.customMenus }}<a href="{{ .url }}">{{ lower .name }} ↓</a>{{ end }}
       </nav>
     </div>
   </header>
 
   <section class="about">
-    <h2>About</h2>
+    <h2>about</h2>
     <p>{{ $about.summary }}</p>
   </section>
 
   <section>
-    <h2>Experience</h2>
+    <h2>experience</h2>
     {{ range $exp.experiences }}
     <article class="job">
-      <div class="job-head">
-        <h3>{{ if .company.url }}<a href="{{ .company.url }}">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h3>
-        <span class="loc">{{ .company.location }}</span>
-      </div>
-      {{ range .positions }}
-      <div class="pos">
-        <div class="pos-head">
+      {{ $first := index .positions 0 }}
+      {{ $last := index .positions (sub (len .positions) 1) }}
+      <div class="job-when">{{ $last.start }} –
+{{ $first.end | default "present" }}</div>
+      <div class="job-body">
+        <h3>{{ if .company.url }}<a href="{{ .company.url }}">{{ .company.name }}</a>{{ else }}{{ .company.name }}{{ end }}</h3><span class="loc">{{ .company.location }}</span>
+        {{ range .positions }}
+        <div class="pos">
           <strong>{{ .designation }}</strong>
-          <span class="dates">{{ .start }} – {{ .end | default "Present" }}</span>
+          <span class="pos-when">{{ .start }} – {{ .end | default "present" }}</span>
+          <ul>
+            {{ range .responsibilities }}<li>{{ . }}</li>{{ end }}
+          </ul>
         </div>
-        <ul>
-          {{ range .responsibilities }}<li>{{ . }}</li>{{ end }}
-        </ul>
+        {{ end }}
       </div>
-      {{ end }}
     </article>
     {{ end }}
   </section>
 
   <section>
-    <h2>Skills</h2>
-    <ul class="chips">
-      {{ range $skills.skills }}<li title="{{ .summary }}">{{ .name }}</li>{{ end }}
-    </ul>
+    <h2>skills</h2>
+    <dl>
+      {{ $groups := slice
+        (dict "key" "architecture" "label" "architecture")
+        (dict "key" "language" "label" "languages")
+        (dict "key" "infrastructure" "label" "infrastructure")
+        (dict "key" "database" "label" "data")
+        (dict "key" "ai" "label" "ai") }}
+      {{ range $groups }}
+      {{ $g := .key }}
+      <dt>{{ .label }}</dt>
+      <dd>{{ range $skills.skills }}{{ if in .categories $g }}<span title="{{ .summary }}">{{ .name }}</span> {{ end }}{{ end }}</dd>
+      {{ end }}
+    </dl>
   </section>
 
   <footer>
