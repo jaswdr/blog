@@ -19,7 +19,7 @@ buttons:
 skills:
 - name: Elixir
   icon: "devicon-elixir-plain colored"
-  summary: "Building payroll and payments backend services with Elixir and Phoenix at Remote."
+  summary: "Building payroll processing backend services with Elixir and Phoenix at Remote."
   categories: ["language"]
 - name: Go
   icon: "devicon-go-original-wordmark colored"

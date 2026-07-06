@@ -15,10 +15,10 @@ experiences:
   - designation: Senior Backend Engineer
     start: May 2026
     responsibilities:
-    - Design and build payroll and payments backend services using Elixir and Phoenix, supporting global payroll operations across many countries.
-    - Develop APIs and integrations with payment providers and banking partners, focusing on correctness, idempotency, and auditability of money movement.
-    - Improve reliability and observability of payment pipelines through metrics, distributed tracing, and automated reconciliation.
-    - Collaborate with product and compliance teams to ship features that operate across multiple legal jurisdictions.
+    - Design and build payroll processing backend services using Elixir and Phoenix, running payroll for employees across many countries.
+    - Develop payroll run and calculation engines, focusing on correctness, auditability, and compliance with country-specific legislation.
+    - Improve reliability and observability of payroll pipelines through metrics, distributed tracing, and automated validation of payroll outputs.
+    - Collaborate with product and compliance teams to ship payroll features that operate across multiple legal jurisdictions.
     - Mentor engineers and lead design reviews for backend services, upholding high engineering standards.
 
 - company:
