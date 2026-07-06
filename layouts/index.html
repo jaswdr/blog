@@ -19,6 +19,23 @@
 <meta property="og:description" content="{{ $d.site.openGraph.description }}">
 <meta property="og:image" content="{{ $portrait.Permalink }}">
 <meta property="og:url" content="{{ .Site.BaseURL }}">
+{{- $skillNames := slice }}{{ range $skills.skills }}{{ $skillNames = $skillNames | append .name }}{{ end }}
+{{- $jsonld := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" $author.name
+  "jobTitle" $about.designation
+  "description" $about.summary
+  "url" .Site.BaseURL
+  "image" $portrait.Permalink
+  "email" (printf "mailto:%s" $author.contactInfo.email)
+  "worksFor" (dict "@type" "Organization" "name" $about.company.name "url" $about.company.url)
+  "knowsAbout" $skillNames
+  "sameAs" (slice
+    (printf "https://github.com/%s" $author.contactInfo.github)
+    (printf "https://linkedin.com/in/%s" $author.contactInfo.linkedin))
+}}
+<script type="application/ld+json">{{ $jsonld | jsonify | safeJS }}</script>
 <link rel="preload" as="image" href="{{ $portrait.RelPermalink }}" fetchpriority="high">
 <script>
 const h = document.documentElement;
