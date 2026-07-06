@@ -17,9 +17,29 @@ buttons:
   filter: "database"
 
 skills:
+- name: Distributed Systems
+  icon: "fas fa-network-wired"
+  summary: "Designing and scaling systems to billions of requests at AWS, MongoDB, and Remote."
+  categories: ["architecture"]
+- name: API Design
+  icon: "fas fa-plug"
+  summary: "Designing consistent, secure, high-scale APIs; led cross-team API design reviews."
+  categories: ["architecture"]
+- name: Event-Driven Architecture
+  icon: "fas fa-exchange-alt"
+  summary: "Building asynchronous pipelines with queues and streams for telemetry and payroll processing."
+  categories: ["architecture"]
+- name: Microservices
+  icon: "fas fa-cubes"
+  summary: "Led monolith-to-microservices migrations and built service-oriented platforms."
+  categories: ["architecture"]
 - name: Elixir
   icon: "devicon-elixir-plain colored"
   summary: "Building payroll processing backend services with Elixir and Phoenix at Remote."
+  categories: ["language"]
+- name: Phoenix
+  icon: "devicon-phoenix-original colored"
+  summary: "Daily framework for payroll backend services at Remote."
   categories: ["language"]
 - name: Go
   icon: "devicon-go-original-wordmark colored"
@@ -61,7 +81,39 @@ skills:
   icon: "devicon-redis-plain colored"
   summary: "Used for high-performance caching and distributed state management."
   categories: ["database"]
+- name: Kafka
+  icon: "devicon-apachekafka-original colored"
+  summary: "Event streaming for asynchronous service communication and data pipelines."
+  categories: ["database"]
+- name: AWS Kinesis
+  icon: "fas fa-stream"
+  summary: "Built telemetry and monitoring pipelines processing network data at AWS scale."
+  categories: ["database"]
+- name: Elasticsearch
+  icon: "devicon-elasticsearch-plain colored"
+  summary: "Search and log analytics for operational data."
+  categories: ["database"]
+- name: SQL Optimization
+  icon: "fas fa-database"
+  summary: "Schema design and query tuning for high-volume transactional workloads with strict ACID requirements."
+  categories: ["database"]
 - name: OpenTelemetry
   icon: "fas fa-chart-line"
   summary: "Implementing distributed tracing and deep observability in global services."
   categories: ["infrastructure"]
+- name: Grafana & Prometheus
+  icon: "devicon-grafana-original colored"
+  summary: "Metrics, dashboards, and alerting for production services."
+  categories: ["infrastructure"]
+- name: Terraform & IaC
+  icon: "devicon-terraform-plain colored"
+  summary: "Infrastructure as Code with Terraform, AWS CDK, and CloudFormation across global deployments."
+  categories: ["infrastructure"]
+- name: CI/CD
+  icon: "fas fa-rocket"
+  summary: "Automated build, test, and deployment pipelines from Jenkins to modern GitOps with Argo CD."
+  categories: ["infrastructure"]
+- name: LLM Integration
+  icon: "fas fa-robot"
+  summary: "Integrating OpenAI and Anthropic APIs into production tools for incident resolution and automation."
+  categories: ["ai"]
