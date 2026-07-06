@@ -10,7 +10,7 @@ designation: Senior Backend Engineer
 company:
   name: Remote
   url: "https://remote.com"
-summary: 'I am a Senior Software Engineer with 16+ years of experience designing and scaling distributed backend systems. At AWS I owned Lambda control-plane services processing billions of requests weekly; at MongoDB I built internal platform APIs and tooling; today at Remote I build the payroll processing backbone of a global HR platform. I focus on correctness, reliability, and elegant API design, and I enjoy mentoring engineers and leading cross-team design reviews. My toolkit spans Elixir, Go, Python, and Kubernetes on cloud-scale infrastructure.'
+summary: 'I am a Senior Software Engineer with 16+ years of experience designing and scaling distributed backend systems. At AWS I owned Lambda control-plane services that processed billions of requests weekly, at MongoDB I built internal platform APIs and tooling, and today at Remote I work on payroll processing for a global HR platform. I care about correctness, reliability, and good API design, and I like mentoring engineers and leading cross-team design reviews. I work mostly with Elixir, Go, Python, and Kubernetes.'
 
 socialLinks:
 - name: Email

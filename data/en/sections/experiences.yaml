@@ -19,7 +19,7 @@ experiences:
     - Develop payroll run workflows and services, focusing on correctness, auditability, and compliance with country-specific legislation.
     - Improve reliability and observability of payroll pipelines through metrics, distributed tracing, and automated validation of payroll outputs.
     - Collaborate with product and compliance teams to ship payroll features that operate across multiple legal jurisdictions.
-    - Mentor engineers and lead design reviews for backend services, upholding high engineering standards.
+    - Mentor engineers and lead design reviews for backend services.
 
 - company:
     name: MongoDB
@@ -32,10 +32,10 @@ experiences:
     end: May 2026
     responsibilities:
     - Build internal self-service APIs and distributed tools using Go and Kubernetes to accelerate development velocity and automate infrastructure operations.
-    - Design and implement high-performance backend services leveraging Crossplane and Argo CD for automated resource management.
+    - Design and implement high-performance backend services using Crossplane and Argo CD for automated resource management.
     - Integrate LLMs (OpenAI, Anthropic) via backend APIs to enhance internal software tools, improving incident resolution and self-service capabilities.
     - Implement distributed tracing and performance metrics using OpenTelemetry to ensure the reliability of backend services.
-    - Lead cross-team design reviews for global services, focusing on API consistency, security, and high-quality software engineering standards.
+    - Lead cross-team design reviews for global services, focusing on API consistency and security.
 
 - company:
     name: Amazon Web Services (AWS)
@@ -48,7 +48,7 @@ experiences:
     end: Apr 2025
     responsibilities:
     - Owned Lambda function state transition services using Java and Go, serving millions of developers and processing billions of requests weekly via the Lambda Control Plane API.
-    - Mentored 4 engineers on core Lambda architecture and operational excellence, improving team code review velocity by 25% and fostering a culture of high-quality engineering.
+    - Mentored 4 engineers on core Lambda architecture and operational excellence, improving team code review velocity by 25%.
     - Migrated legacy monitoring to a high-cardinality stack using AWS Kinesis and Athena, reducing MTTA by 40% and enabling real-time performance insights.
     - Built ranking algorithm using LLMs and traditional machine learning techniques to optimize Network Engineers' work through hundreds of daily tickets.
     - Architected an automated capacity deployment system with CloudFormation to accelerate region launches by 30% and reduce manual operations by 90%.
@@ -57,9 +57,9 @@ experiences:
     start: Mar 2020
     end: Apr 2024
     responsibilities:
-    - Maintained a high-concurrency internal workflow engine managing hundreds of thousands of network devices daily, leveraging Python for backend services.
+    - Maintained a high-concurrency internal workflow engine in Python, managing hundreds of thousands of network devices daily.
     - Built data pipelines using AWS Glue, EMR, and Kinesis to process network telemetry, enabling automated detection and remediation of large-scale network events.
-    - Automated compute capacity deployment globally using AWS CDK and Ruby, streamlining infrastructure provisioning and reducing regional deployment risk.
+    - Automated compute capacity deployment globally using AWS CDK and Ruby, cutting manual provisioning work and regional deployment risk.
     - Developed an automated ticket prioritization system, reducing Large Scale Events (LSEs) by 20% through better impact analysis.
     - Served as platform subject matter expert for global network events, developing automation tools to perform rapid traffic-shifting and mitigate customer impact.
 
@@ -73,7 +73,7 @@ experiences:
     start: Feb 2019
     end: Mar 2020
     responsibilities:
-    - Developed an end-user facing IoT fleet management platform using Go and Django, providing a robust runtime and deployment interface for edge computing.
+    - Developed an end-user facing IoT fleet management platform using Go and Django, with a runtime and deployment interface for edge computing.
     - Built responsive dashboards with Vue.js and Streamlit, enabling developers to monitor and manage large-scale IoT deployments with real-time feedback.
     - Managed Kubernetes clusters across AWS, Google Cloud, and Digital Ocean, optimizing for cost and scalability while maintaining high availability.
     - Integrated OpenTelemetry for distributed tracing and Grafana for metrics, reducing MTTR by 30% and improving platform reliability.
@@ -91,7 +91,7 @@ experiences:
     responsibilities:
     - Led the migration from a legacy monolith to a microservices architecture using Python and Node.js, increasing feature velocity and system resilience.
     - Designed Embedded Linux applications for real-time ultrasound streaming, building backend services to support high-bandwidth diagnostics.
-    - Developed and maintained streaming interfaces using Angular.js, Vue.js, and TypeScript, ensuring a seamless experience across medical devices.
+    - Developed and maintained streaming interfaces using Angular.js, Vue.js, and TypeScript, keeping behavior consistent across medical devices.
     - Developed complex API integrations with third-party medical software, increasing lead generation by 20% through automated data synchronization.
     - Introduced automated testing and containerization with Docker to the development workflow, significantly reducing deployment errors.
 
@@ -107,9 +107,9 @@ experiences:
     responsibilities:
     - Developed web applications for government agencies using PHP (Laravel) and Node.js, focusing on high-quality, reliable software delivery.
     - Designed and implemented an auditing application for driving exams on Embedded Linux, successfully deployed in 200+ schools.
-    - Streamlined deployment pipelines using Jenkins, reducing manual intervention and improving deployment stability.
+    - Automated deployment pipelines with Jenkins, reducing manual steps and deployment failures.
     - Designed and optimized relational database schemas (PostgreSQL, Sybase) to handle high volumes of examination data with strict ACID requirements.
-    - Fostered a culture of code quality and best practices through Agile/Scrum methodologies, conducting technical training for junior developers.
+    - Introduced Agile/Scrum practices and ran technical training for junior developers.
 
 - company:
     name: Pomerplast
@@ -122,7 +122,7 @@ experiences:
     end: Sep 2014
     responsibilities:
     - Maintained and extended the company’s internal ERP system using Delphi and Sybase IQ, improving security and reliability through effective software solutions.
-    - Managed Windows and Linux server clusters, implementing robust backup and disaster recovery strategies for business-critical data.
+    - Managed Windows and Linux server clusters, implementing backup and disaster recovery for business-critical data.
     - Managed internal technical infrastructure budgets, including networking, server clusters, and camera systems, ensuring cost-effective operations.
     - Owned the end-to-end development of internal tools, from requirement gathering with stakeholders to production deployment and support.
     - Automated reporting and inventory tracking processes, reducing manual data entry errors and providing real-time business insights.
