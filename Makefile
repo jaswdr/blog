@@ -17,12 +17,8 @@ help: ## Show available commands
 serve: ## Run Hugo development server with drafts and live reload
 	$(HUGO) serve --buildDrafts --buildFuture
 
-node_modules: package.json
-	npm install
-	touch node_modules
-
 .PHONY: build
-build: node_modules ## Build the static site into the public/ directory
+build: ## Build the static site into the public/ directory
 	$(HUGO) --minify
 
 .PHONY: clean

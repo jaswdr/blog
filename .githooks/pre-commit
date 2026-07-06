@@ -1,0 +1,29 @@
+#!/bin/sh
+# Validate that the generated machine-readable outputs still build correctly.
+set -e
+
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+
+if ! hugo --quiet --destination "$tmp"; then
+  echo "pre-commit: hugo build failed" >&2
+  exit 1
+fi
+
+python3 - "$tmp" <<'PY'
+import json, sys, pathlib
+out = pathlib.Path(sys.argv[1])
+
+cv = json.loads((out / "cv.json").read_text())
+assert cv["basics"]["name"], "cv.json: basics.name missing"
+assert cv["work"], "cv.json: work is empty"
+assert cv["skills"], "cv.json: skills is empty"
+
+for name in ("llms.txt", "cv.txt"):
+    text = (out / name).read_text()
+    assert text.startswith("# Jonathan Schweder"), f"{name}: missing expected heading"
+    assert "## Experience" in text, f"{name}: missing Experience section"
+    assert "<" not in text.split("\n")[0], f"{name}: unexpected markup"
+
+print("pre-commit: llms.txt, cv.txt, cv.json OK")
+PY

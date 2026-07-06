@@ -1,121 +1,28 @@
 baseURL: https://jaswdr.dev/
 title: "Jonathan Schweder"
-languageCode: en-us
-theme: toha
+locale: en-us
 defaultContentLanguage: en
 
-# Allow raw html in markdown file
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
+disableKinds: ["taxonomy", "term", "section", "page", "RSS"]
 
-# Enable global emoji support
-enableEmoji: true
+outputFormats:
+  llms:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
+  cv:
+    mediaType: text/plain
+    baseName: cv
+    isPlainText: true
+  resume:
+    mediaType: application/json
+    baseName: cv
+    isPlainText: true
 
-# Site parameters
+outputs:
+  home: [HTML, llms, cv, resume]
+
 params:
-  # Background image of the landing page
-  background: images/site/background.jpg
-
-  # Provide logos for your site.
-  logo:
-    main: images/me.webp
-    inverted: images/me.webp
-    favicon: favicon.png
-
-  # GitHub repo of your site
-  gitRepo: https://github.com/jaswdr/blog
-  gitBranch: main
-
-  # Configure the number of section title visible in the top navbar
-  topNavbar:
-    maxVisibleSections: 5
-
-  # Configure various features of this theme
-  features:
-    theme:
-      enable: true
-      services:
-        light: true
-        dark: true
-        default: system
-
-    portfolio:
-      enable: true
-
-    blog:
-      enable: false
-
-    notes:
-      enable: false
-
-    comment:
-      enable: false
-
-    analytics:
-      enable: true
-      services:
-        posthog:
-          apiKey: phc_4gAFRm1jftCJsx1fCyf3zewyNx7Py6QA9ILKj0H8S1f
-          host: /ingest
-          options:
-            defaults: "2026-01-30"
-
-    toc:
-      enable: true
-
-    tags:
-      enable: true
-      on_card: true
-
-    flags:
-      enable: true
-
-    embedpdf:
-      enable: true
-
-    flowchart:
-      enable: true
-      services:
-        mermaid:
-          theme: default
-          darkTheme: dark
-
-    math:
-      enable: true
-
-    syntaxHighlight:
-      enable: true
-
-    videoPlayer:
-      enable: true
-
-    copyCodeButton:
-      enable: true
-
-  footer:
-    enable: true
-    navigation:
-      enable: true
-      customMenus: true
-    contactMe:
-      enable: true
-    newsletter:
-      enable: false
-    credentials:
-      enable: true
-    disclaimer:
-      enable: false
-
-languages:
-  en:
-    languageCode: en
-    languageName: English
-    title: "Jonathan Schweder"
-    weight: 1
-
-# Module configuration if using Hugo Modules (optional if theme is in themes/toha)
-# module:
-#   imports:
-#     - path: themes/toha
+  posthog:
+    apiKey: phc_4gAFRm1jftCJsx1fCyf3zewyNx7Py6QA9ILKj0H8S1f
+    host: /ingest

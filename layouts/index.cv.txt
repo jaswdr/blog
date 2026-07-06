@@ -1,0 +1,59 @@
+{{- $d := index hugo.Data "en" -}}
+{{- $author := $d.author -}}
+{{- $about := $d.sections.about -}}
+# {{ $author.name }} - {{ $about.designation }} @ {{ $about.company.name }}
+
+- Website: {{ .Site.BaseURL }}
+- Email: {{ $author.contactInfo.email }}
+- GitHub: https://github.com/{{ $author.contactInfo.github }}
+- LinkedIn: https://linkedin.com/in/{{ $author.contactInfo.linkedin }}
+
+## About
+
+{{ $about.summary }}
+
+## Experience
+{{ range $d.sections.experiences.experiences }}
+{{- $c := .company }}
+{{ range .positions }}
+### {{ .designation }} - {{ $c.name }} ({{ .start }} – {{ .end | default "present" }})
+
+{{ $c.location }}{{ with $c.url }} · {{ . }}{{ end }} · {{ $c.overview }}
+
+{{ range .responsibilities -}}
+- {{ . }}
+{{ end -}}
+{{ end -}}
+{{ end }}
+## Education
+{{ range $d.sections.education.education }}
+- {{ .degree }}, {{ .institution }} ({{ .start }} - {{ .end }})
+{{- end }}
+
+## Certifications
+{{ range $d.sections.education.certifications }}
+- {{ . }}
+{{- end }}
+
+## Languages
+{{ range $d.sections.education.languages }}
+- {{ .name }} ({{ .level }})
+{{- end }}
+
+## Honors
+{{ range $d.sections.education.honors }}
+- {{ . }}
+{{- end }}
+
+## Skills
+
+{{ $groups := slice
+  (dict "key" "architecture" "label" "Architecture")
+  (dict "key" "language" "label" "Languages")
+  (dict "key" "infrastructure" "label" "Infrastructure")
+  (dict "key" "database" "label" "Data")
+  (dict "key" "ai" "label" "AI") -}}
+{{ range $groups -}}
+{{ $g := .key -}}
+- {{ .label }}: {{ $first := true }}{{ range $d.sections.skills.skills }}{{ if in .categories $g }}{{ if not $first }}, {{ end }}{{ .name }}{{ $first = false }}{{ end }}{{ end }}
+{{ end }}

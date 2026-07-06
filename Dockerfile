@@ -1,17 +1,16 @@
 # Build stage
-FROM node:24-slim AS builder
+FROM debian:stable-slim AS builder
 
 # Install Hugo
-RUN apt-get update && apt-get install -y wget && \
-    wget https://github.com/gohugoio/hugo/releases/download/v0.155.3/hugo_extended_0.155.3_linux-64bit.tar.gz && \
-    tar -xzf hugo_extended_0.155.3_linux-64bit.tar.gz && \
+# BuildKit sets TARGETARCH; default for the legacy builder
+ARG TARGETARCH=amd64
+RUN apt-get update && apt-get install -y --no-install-recommends wget ca-certificates && \
+    wget -q https://github.com/gohugoio/hugo/releases/download/v0.163.3/hugo_extended_0.163.3_linux-${TARGETARCH}.tar.gz && \
+    tar -xzf hugo_extended_0.163.3_linux-${TARGETARCH}.tar.gz && \
     mv hugo /usr/local/bin/hugo && \
-    rm hugo_extended_0.155.3_linux-64bit.tar.gz
+    rm hugo_extended_0.163.3_linux-${TARGETARCH}.tar.gz
 
 WORKDIR /project
-
-COPY package*.json ./
-RUN npm install
 
 COPY . .
 
