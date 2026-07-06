@@ -29,6 +29,15 @@ make build         # production build to public/
 make docker-build  # build the nginx image (also builds the site)
 ```
 
+## Git hooks
+
+`.githooks/pre-commit` rebuilds the site to a temp dir and validates the
+generated `llms.txt`, `cv.txt`, and `cv.json`. Enable once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ## Editing the CV
 
 Change the YAML files under `data/en/` - no template changes needed for new jobs, skills, or contact links. `public/` is generated; never edit it manually.
