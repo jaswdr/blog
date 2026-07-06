@@ -20,14 +20,16 @@
 <meta property="og:image" content="{{ $portrait.Permalink }}">
 <meta property="og:url" content="{{ .Site.BaseURL }}">
 <link rel="preload" as="image" href="{{ $portrait.RelPermalink }}" fetchpriority="high">
+<script>document.documentElement.style.colorScheme=localStorage.theme||""</script>
 <style>
 :root{
-  --paper:#f5f4ef;--ink:#1b1c1e;--muted:#66675f;--line:#dddcd2;
-  --accent:#9a5b0f;--key:#7a7b72;
-}
-@media (prefers-color-scheme:dark){
-  :root{--paper:#151619;--ink:#dcdad2;--muted:#8f9089;--line:#2b2c30;
-    --accent:#dca55c;--key:#75766f}
+  color-scheme:light dark;
+  --paper:light-dark(#f5f4ef,#151619);
+  --ink:light-dark(#1b1c1e,#dcdad2);
+  --muted:light-dark(#66675f,#8f9089);
+  --line:light-dark(#dddcd2,#2b2c30);
+  --accent:light-dark(#9a5b0f,#dca55c);
+  --key:light-dark(#7a7b72,#75766f);
 }
 *{box-sizing:border-box;margin:0}
 body{
@@ -50,6 +52,8 @@ nav{display:flex;gap:1.25rem;margin-top:.9rem;flex-wrap:wrap;
     font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.82rem}
 nav a{text-decoration:none;color:var(--accent)}
 nav a:hover{text-decoration:underline}
+nav button{font:inherit;color:var(--muted);background:none;border:0;padding:0;cursor:pointer}
+nav button:hover{color:var(--accent)}
 /* sections: yaml-key headings */
 section{margin-top:4rem}
 h2{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
@@ -111,6 +115,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
         <a href="https://github.com/{{ $author.contactInfo.github }}">github</a>
         <a href="https://linkedin.com/in/{{ $author.contactInfo.linkedin }}">linkedin</a>
         {{ range $d.site.customMenus }}<a href="{{ .url }}">{{ lower .name }} ↓</a>{{ end }}
+        <button id="theme" aria-label="Toggle dark mode">theme</button>
       </nav>
     </div>
   </header>
@@ -166,6 +171,16 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
     <span><a href="mailto:{{ $author.contactInfo.email }}">{{ $author.contactInfo.email }}</a></span>
   </footer>
 </main>
+<script>
+document.getElementById("theme").onclick = () => {
+  const sysDark = matchMedia("(prefers-color-scheme: dark)").matches;
+  const cur = localStorage.theme || (sysDark ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  document.documentElement.style.colorScheme = next;
+  // ponytail: store even when next matches system; auto-follow returns after a second toggle
+  localStorage.theme = next;
+};
+</script>
 {{ if hugo.IsProduction }}{{ partial "posthog.html" . }}{{ end }}
 </body>
 </html>
