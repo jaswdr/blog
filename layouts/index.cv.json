@@ -30,6 +30,18 @@
 {{- range $d.sections.skills.skills }}{{ if in .categories $g }}{{ $kw = $kw | append .name }}{{ end }}{{ end -}}
 {{- $skillGroups = $skillGroups | append (dict "name" .label "keywords" $kw) -}}
 {{- end -}}
+{{- $edu := $d.sections.education -}}
+{{- $education := slice -}}
+{{- range $edu.education -}}
+{{- $parts := split .degree ", " -}}
+{{- $education = $education | append (dict "institution" .institution "studyType" (index $parts 0) "area" (index $parts 1) "startDate" .start "endDate" .end) -}}
+{{- end -}}
+{{- $certs := slice -}}
+{{- range $edu.certifications }}{{ $certs = $certs | append (dict "name" .) }}{{ end -}}
+{{- $langs := slice -}}
+{{- range $edu.languages }}{{ $langs = $langs | append (dict "language" .name "fluency" .level) }}{{ end -}}
+{{- $awards := slice -}}
+{{- range $edu.honors }}{{ $awards = $awards | append (dict "title" .) }}{{ end -}}
 {{- $resume := dict
   "$schema" "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json"
   "basics" (dict
@@ -38,9 +50,14 @@
     "email" $author.contactInfo.email
     "url" .Site.BaseURL
     "summary" $about.summary
+    "location" (dict "city" "Pomerode" "region" "Santa Catarina" "countryCode" "BR")
     "profiles" (slice
       (dict "network" "GitHub" "username" $author.contactInfo.github "url" (printf "https://github.com/%s" $author.contactInfo.github))
       (dict "network" "LinkedIn" "username" $author.contactInfo.linkedin "url" (printf "https://linkedin.com/in/%s" $author.contactInfo.linkedin))))
   "work" $work
+  "education" $education
+  "certificates" $certs
+  "languages" $langs
+  "awards" $awards
   "skills" $skillGroups -}}
 {{- $resume | jsonify (dict "indent" "  ") -}}

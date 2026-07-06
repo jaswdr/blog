@@ -150,6 +150,10 @@ skills:
   icon: "fas fa-lock"
   summary: "Access control and security reviews for global cloud services."
   categories: ["infrastructure"]
+- name: Okta & OIDC
+  icon: "fas fa-id-badge"
+  summary: "Authentication and identity integration for internal platforms at MongoDB."
+  categories: ["infrastructure"]
 - name: Google Cloud
   icon: "devicon-googlecloud-plain colored"
   summary: "Managed Kubernetes clusters on GCP at Pantacor."

@@ -1,0 +1,25 @@
+education:
+- institution: Universidade Regional de Blumenau
+  degree: BSc, Computer Science
+  start: "2010"
+  end: "2015"
+- institution: IGTI
+  degree: MBA, Software Engineering
+  start: "2018"
+  end: "2020"
+
+certifications:
+- AWS Cloud Solutions Architect
+- Google Data Analytics Certificate
+
+languages:
+- name: Portuguese
+  level: native
+- name: English
+  level: fluent
+- name: German
+  level: elementary
+
+honors:
+- Ownership Award
+- EPlus, startup accepted for incubation

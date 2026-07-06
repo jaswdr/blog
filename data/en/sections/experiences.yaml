@@ -28,14 +28,15 @@ experiences:
     overview: MongoDB is a modern, general-purpose database platform.
   positions:
   - designation: Software Engineer
-    start: Apr 2025
-    end: May 2026
+    start: May 2025
+    end: Apr 2026
     responsibilities:
     - Build internal self-service APIs and distributed tools using Go and Kubernetes to accelerate development velocity and automate infrastructure operations.
     - Design and implement high-performance backend services using Crossplane and Argo CD for automated resource management.
+    - Build automated maintenance workflows and CI/CD enhancements with Argo Workflows and Drone CI, enabling zero-downtime deployments and reducing manual toil.
     - Integrate LLMs (OpenAI, Anthropic) via backend APIs to enhance internal software tools, improving incident resolution and self-service capabilities.
     - Implement distributed tracing and performance metrics using OpenTelemetry to ensure the reliability of backend services.
-    - Lead cross-team design reviews for global services, focusing on API consistency and security.
+    - Lead cross-team design reviews for global services, focusing on API consistency, security (Okta, OIDC), and developer ergonomics.
 
 - company:
     name: Amazon Web Services (AWS)
@@ -45,7 +46,7 @@ experiences:
   positions:
   - designation: Software Development Engineer - AWS Lambda
     start: Apr 2024
-    end: Apr 2025
+    end: May 2025
     responsibilities:
     - Owned Lambda function state transition services using Java and Go, serving millions of developers and processing billions of requests weekly via the Lambda Control Plane API.
     - Mentored 4 engineers on core Lambda architecture and operational excellence, improving team code review velocity by 25%.

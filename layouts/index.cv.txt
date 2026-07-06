@@ -25,6 +25,26 @@
 {{ end -}}
 {{ end -}}
 {{ end }}
+## Education
+{{ range $d.sections.education.education }}
+- {{ .degree }}, {{ .institution }} ({{ .start }} - {{ .end }})
+{{- end }}
+
+## Certifications
+{{ range $d.sections.education.certifications }}
+- {{ . }}
+{{- end }}
+
+## Languages
+{{ range $d.sections.education.languages }}
+- {{ .name }} ({{ .level }})
+{{- end }}
+
+## Honors
+{{ range $d.sections.education.honors }}
+- {{ . }}
+{{- end }}
+
 ## Skills
 
 {{ $groups := slice

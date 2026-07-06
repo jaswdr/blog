@@ -42,6 +42,7 @@
 <meta name="twitter:image" content="{{ $card.Permalink }}">
 {{- $skillNames := slice }}{{ range $skills.skills }}{{ $skillNames = $skillNames | append .name }}{{ end }}
 {{- $pastOrgs := slice }}{{ range after 1 $exp.experiences }}{{ $o := dict "@type" "Organization" "name" .company.name }}{{ with .company.url }}{{ $o = merge $o (dict "url" .) }}{{ end }}{{ $pastOrgs = $pastOrgs | append $o }}{{ end }}
+{{- range $d.sections.education.education }}{{ $pastOrgs = $pastOrgs | append (dict "@type" "EducationalOrganization" "name" .institution) }}{{ end }}
 {{- $person := dict
   "@type" "Person"
   "name" $author.name
@@ -54,6 +55,10 @@
   "hasOccupation" (dict "@type" "Occupation" "name" $about.designation)
   "alumniOf" $pastOrgs
   "knowsAbout" $skillNames
+  "knowsLanguage" (slice "pt" "en" "de")
+  "award" $d.sections.education.honors
+  "hasCredential" $d.sections.education.certifications
+  "homeLocation" (dict "@type" "Place" "name" "Pomerode, Santa Catarina, Brazil")
   "sameAs" (slice
     (printf "https://github.com/%s" $author.contactInfo.github)
     (printf "https://linkedin.com/in/%s" $author.contactInfo.linkedin))
@@ -207,6 +212,20 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
   </section>
 
   <section>
+    <h2>education</h2>
+    {{ range $d.sections.education.education }}
+    <article class="job">
+      <div class="job-when"><time datetime="{{ .start }}">{{ .start }}</time> –
+<time datetime="{{ .end }}">{{ .end }}</time></div>
+      <div class="job-body">
+        <h3>{{ .institution }}</h3>
+        <div class="pos"><strong>{{ .degree }}</strong></div>
+      </div>
+    </article>
+    {{ end }}
+  </section>
+
+  <section>
     <h2>skills</h2>
     <dl>
       {{ $groups := slice
@@ -220,6 +239,18 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
       <dt>{{ .label }}</dt>
       <dd>{{ range $skills.skills }}{{ if in .categories $g }}<span title="{{ .summary }}">{{ .name }}</span> {{ end }}{{ end }}</dd>
       {{ end }}
+    </dl>
+  </section>
+
+  <section>
+    <h2>more</h2>
+    <dl>
+      <dt>certifications</dt>
+      <dd>{{ range $d.sections.education.certifications }}<span>{{ . }}</span> {{ end }}</dd>
+      <dt>languages</dt>
+      <dd>{{ range $d.sections.education.languages }}<span>{{ .name }} ({{ .level }})</span> {{ end }}</dd>
+      <dt>honors</dt>
+      <dd>{{ range $d.sections.education.honors }}<span>{{ . }}</span> {{ end }}</dd>
     </dl>
   </section>
 
