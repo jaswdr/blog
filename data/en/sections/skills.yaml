@@ -130,6 +130,26 @@ skills:
   icon: "devicon-amazonwebservices-plain-wordmark colored"
   summary: "Deep expertise in AWS services, including Lambda, Networking, and Infrastructure as Code."
   categories: ["infrastructure"]
+- name: AWS Lambda
+  icon: "fas fa-bolt"
+  summary: "Owned control-plane services for the Lambda platform itself, serving millions of developers."
+  categories: ["infrastructure"]
+- name: Amazon EC2
+  icon: "fas fa-server"
+  summary: "Global compute capacity deployment and fleet operations at AWS."
+  categories: ["infrastructure"]
+- name: Amazon S3
+  icon: "fas fa-archive"
+  summary: "Object storage for data pipelines, backups, and static hosting."
+  categories: ["infrastructure"]
+- name: VPC & Networking
+  icon: "fas fa-diagram-project"
+  summary: "Four years in AWS Networking managing hundreds of thousands of network devices."
+  categories: ["infrastructure"]
+- name: IAM & Security
+  icon: "fas fa-lock"
+  summary: "Access control and security reviews for global cloud services."
+  categories: ["infrastructure"]
 - name: Google Cloud
   icon: "devicon-googlecloud-plain colored"
   summary: "Managed Kubernetes clusters on GCP at Pantacor."
