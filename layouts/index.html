@@ -12,6 +12,7 @@
 <title>{{ .Site.Title }} | {{ $about.designation }}</title>
 <meta name="description" content="{{ $d.site.description }}">
 <link rel="canonical" href="{{ .Site.BaseURL }}">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
 <link rel="icon" href="/images/favicon_32x32.webp" type="image/webp">
 <link rel="apple-touch-icon" href="/images/favicon_apple_touch.webp">
 <meta property="og:title" content="{{ $d.site.openGraph.title }}">
@@ -199,7 +200,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 
   <footer>
     <span>{{ $d.site.copyright }}</span>
-    <span><a href="mailto:{{ $author.contactInfo.email }}">{{ $author.contactInfo.email }}</a></span>
+    <span><a href="/llms.txt">llms.txt</a> · <a href="mailto:{{ $author.contactInfo.email }}">{{ $author.contactInfo.email }}</a></span>
   </footer>
 </main>
 <script>
