@@ -5,6 +5,8 @@
 {{- $exp := $d.sections.experiences -}}
 {{- $skills := $d.sections.skills -}}
 {{- $portrait := (resources.Get "images/me.webp").Process "resize 320x320 webp q80" -}}
+{{- $portrait1x := (resources.Get "images/me.webp").Process "resize 108x108 webp q75" -}}
+{{- $portrait2x := (resources.Get "images/me.webp").Process "resize 216x216 webp q75" -}}
 {{- $face := (resources.Get "images/me.webp").Process "resize 300x300" -}}
 {{- $card := (resources.Get "og-base.png").Filter
       (images.Overlay $face 90 165)
@@ -70,7 +72,7 @@
   "mainEntity" $person
 }}
 <script type="application/ld+json">{{ $jsonld | jsonify | safeJS }}</script>
-<link rel="preload" as="image" href="{{ $portrait.RelPermalink }}" fetchpriority="high">
+<link rel="preload" as="image" href="{{ $portrait1x.RelPermalink }}" imagesrcset="{{ $portrait1x.RelPermalink }} 1x, {{ $portrait2x.RelPermalink }} 2x" fetchpriority="high">
 <script>
 const h = document.documentElement;
 h.style.colorScheme = localStorage.theme || "";
@@ -170,7 +172,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 </button>
 <main>
   <header>
-    <img src="{{ $portrait.RelPermalink }}" alt="{{ $author.name }}" width="108" height="108" fetchpriority="high">
+    <img src="{{ $portrait1x.RelPermalink }}" srcset="{{ $portrait1x.RelPermalink }} 1x, {{ $portrait2x.RelPermalink }} 2x" alt="{{ $author.name }}" width="108" height="108" fetchpriority="high">
     <div>
       <h1>{{ $author.name }}</h1>
       <p class="role">{{ $about.designation }} @ <a href="{{ $about.company.url }}">{{ $about.company.name }}</a></p>
