@@ -1,11 +1,14 @@
 copyright: "© 2026 | Jonathan Schweder"
 description: "Personal Website of Jonathan Schweder - Senior Backend Engineer @ Remote"
+# Bump when CV content changes; used for JSON-LD dateModified
+dateModified: "2026-07-10"
 openGraph:
   title: "Jonathan Schweder | Senior Backend Engineer"
   type: website
   description: "Portfolio of Jonathan Schweder, Senior Backend Engineer at Remote specializing in Distributed Systems."
   image: "images/me.webp"
   url: "https://jaswdr.dev"
+# PDF is hosted externally on GitHub Pages (jaswdr/cv repo)
 customMenus:
 - name: CV
   url: https://github.com/jaswdr/cv/raw/gh-pages/Jonathan_Schweder_CV.pdf

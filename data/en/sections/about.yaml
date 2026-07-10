@@ -1,28 +1,5 @@
-section:
-  name: About
-  id: about
-  enable: true
-  weight: 1
-  showOnNavbar: true
-  template: sections/about.html
-
 designation: Senior Backend Engineer
 company:
   name: Remote
   url: "https://remote.com"
 summary: 'I am a Senior Software Engineer with 16+ years of experience designing and scaling distributed backend systems. At AWS I owned Lambda control-plane services that processed billions of requests weekly, at MongoDB I built internal platform APIs and tooling, and today at Remote I work on payroll processing for a global HR platform. I care about correctness, reliability, and good API design, and I like mentoring engineers and leading cross-team design reviews. I work mostly with Elixir, Go, Python, and Kubernetes.'
-
-socialLinks:
-- name: Email
-  icon: "fas fa-envelope"
-  url: "me@jaswdr.dev"
-- name: Github
-  icon: "fab fa-github"
-  url: "https://github.com/jaswdr"
-- name: LinkedIn
-  icon: "fab fa-linkedin"
-  url: "https://linkedin.com/in/jaswdr"
-
-resourceLinks:
-- title: "View CV"
-  url: "/Jonathan_Schweder_CV.pdf"

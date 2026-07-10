@@ -1,13 +1,6 @@
 name: "Jonathan Schweder"
-nickname: "Jonathan"
-greeting: "Hello, I am"
 image: "images/me.webp"
 contactInfo:
   email: "me@jaswdr.dev"
   github: jaswdr
   linkedin: jaswdr
-summary:
-  - Senior Backend Engineer @ Remote
-  - Distributed Systems Specialist
-  - 16+ years of experience
-  - Expert in Elixir, Go, and Python

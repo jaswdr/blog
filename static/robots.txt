@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jaswdr.dev/sitemap.xml
+# Single-page site; no useful sitemap beyond the homepage.

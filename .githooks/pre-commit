@@ -18,11 +18,13 @@ cv = json.loads((out / "cv.json").read_text())
 assert cv["basics"]["name"], "cv.json: basics.name missing"
 assert cv["work"], "cv.json: work is empty"
 assert cv["skills"], "cv.json: skills is empty"
+assert cv.get("education"), "cv.json: education is empty"
 
 for name in ("llms.txt", "cv.txt"):
     text = (out / name).read_text()
     assert text.startswith("# Jonathan Schweder"), f"{name}: missing expected heading"
     assert "## Experience" in text, f"{name}: missing Experience section"
+    assert "## Education" in text, f"{name}: missing Education section"
     assert "<" not in text.split("\n")[0], f"{name}: unexpected markup"
 
 print("pre-commit: llms.txt, cv.txt, cv.json OK")

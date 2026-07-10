@@ -3,7 +3,7 @@ title: "Jonathan Schweder"
 locale: en-us
 defaultContentLanguage: en
 
-disableKinds: ["taxonomy", "term", "section", "page", "RSS"]
+disableKinds: ["taxonomy", "term", "section", "page", "RSS", "sitemap"]
 
 outputFormats:
   llms:
@@ -21,8 +21,3 @@ outputFormats:
 
 outputs:
   home: [HTML, llms, cv, resume]
-
-params:
-  posthog:
-    apiKey: phc_4gAFRm1jftCJsx1fCyf3zewyNx7Py6QA9ILKj0H8S1f
-    host: /ingest

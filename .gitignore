@@ -10,6 +10,10 @@ hugo.darwin
 hugo.linux
 .hugo_build.lock
 
+# Unused / local-only
+themes/
+.playwright-mcp/
+
 ### Code ###
 .vscode/*
 !.vscode/settings.json

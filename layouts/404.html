@@ -18,6 +18,9 @@ h1{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
 h1::after{content:":";color:var(--accent)}
 p{margin-top:.75rem}
 a{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
 </style>
 </head>
 <body>
