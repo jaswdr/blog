@@ -55,4 +55,3 @@ The home page also builds:
 - `data/en/` — all CV content
 - `assets/` — portrait and OG base image (Hugo-processed)
 - `static/` — favicons, `robots.txt`
-- `archive/` — old site content kept for reference (not rendered)

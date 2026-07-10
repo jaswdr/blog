@@ -19,7 +19,6 @@ Jonathan's personal CV website, served at https://jaswdr.dev/. A single-page Hug
   - `sections/skills.yaml` - skills by category
 - **Portrait**: `assets/images/me.webp`, resized at build time via Hugo image processing
 - **Caching**: `nginx.conf` sets long-lived immutable cache for fingerprinted assets; shorter cache for unfingerprinted favicons and HTML
-- **Archive**: `archive/old-content/` keeps the previous site's markdown for reference; it is not rendered
 
 ## Common Commands
 
