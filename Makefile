@@ -2,7 +2,7 @@
 
 HUGO := hugo
 DOCKER := docker
-IMAGE_NAME := website
+IMAGE_NAME := jaschweder/blog
 HUGO_VERSION := 0.163.3
 
 .DEFAULT_GOAL := help
