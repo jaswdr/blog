@@ -46,7 +46,7 @@ docker-build: ## Build the Docker image
 
 .PHONY: docker-run
 docker-run: ## Run the Docker container locally on port 8080
-	$(DOCKER) run -it --rm -p 8080:80 $(IMAGE_NAME)
+	$(DOCKER) run -it --rm -p 8080:8080 $(IMAGE_NAME)
 
 .PHONY: docker-push
 docker-push: ## Push the Docker image to the registry

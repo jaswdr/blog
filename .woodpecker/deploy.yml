@@ -1,13 +1,14 @@
-# Build on every push to master and every PR; deploy only on master pushes.
-# Built-in skip: [SKIP CI] / [CI SKIP] in the commit message.
+# Build and deploy on every push to master. PR validation is covered by
+# GitHub Actions; this pipeline stays push-only so no fork PR can execute
+# code with the host docker.sock mounted (pipeline config comes from the
+# PR head). Built-in skip: [SKIP CI] / [CI SKIP] in the commit message.
 when:
   - event: push
     branch: master
-  - event: pull_request
 
 steps:
-  # Tag by SHA so PR builds never overwrite the production :latest tag on the
-  # host daemon (the Woodpecker agent builds directly on it via docker.sock).
+  # Tag by commit SHA; the deploy step is the only place :latest is moved
+  # (the Woodpecker agent builds directly on the host daemon via docker.sock).
   - name: build
     image: docker:27-cli
     volumes:
@@ -26,6 +27,3 @@ steps:
       - docker compose --project-name duckrent up -d --no-deps website
     depends_on:
       - build
-    when:
-      - event: push
-        branch: master
