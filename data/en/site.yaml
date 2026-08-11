@@ -8,9 +8,9 @@ openGraph:
   description: "Portfolio of Jonathan Schweder, Senior Backend Engineer at Remote specializing in Distributed Systems."
   image: "images/me.webp"
   url: "https://jaswdr.dev"
-# PDF is hosted externally on GitHub Pages (jaswdr/cv repo)
+# PDF is hosted externally; link.jaswdr.dev/cv is the stable short link
 customMenus:
 - name: CV
-  url: https://github.com/jaswdr/cv/raw/gh-pages/Jonathan_Schweder_CV.pdf
+  url: https://link.jaswdr.dev/cv
   hideFromNavbar: false
   showOnFooter: true
