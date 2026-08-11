@@ -63,8 +63,8 @@
   "hasCredential" $d.sections.education.certifications
   "homeLocation" (dict "@type" "Place" "name" "Pomerode, Santa Catarina, Brazil")
   "sameAs" (slice
-    (printf "https://github.com/%s" $author.contactInfo.github)
-    (printf "https://linkedin.com/in/%s" $author.contactInfo.linkedin))
+    $author.contactInfo.githubUrl
+    $author.contactInfo.linkedinUrl)
 }}
 {{- $jsonld := dict
   "@context" "https://schema.org"
@@ -184,8 +184,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <p class="role">{{ $about.designation }} @ <a href="{{ $about.company.url }}">{{ $about.company.name }}</a></p>
       <nav aria-label="Contact and CV">
         <a href="mailto:{{ $author.contactInfo.email }}">email</a>
-        <a href="https://github.com/{{ $author.contactInfo.github }}">github</a>
-        <a href="https://linkedin.com/in/{{ $author.contactInfo.linkedin }}">linkedin</a>
+        <a href="{{ $author.contactInfo.githubUrl }}">github</a>
+        <a href="{{ $author.contactInfo.linkedinUrl }}">linkedin</a>
         {{ range $d.site.customMenus }}<a href="{{ .url }}">{{ lower .name }} ↓</a>{{ end }}
       </nav>
     </div>

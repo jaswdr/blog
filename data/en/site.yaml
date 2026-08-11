@@ -1,7 +1,7 @@
 copyright: "© 2026 | Jonathan Schweder"
 description: "Personal Website of Jonathan Schweder - Senior Backend Engineer @ Remote"
 # Bump when CV content changes; used for JSON-LD dateModified
-dateModified: "2026-07-10"
+dateModified: "2026-08-11"
 openGraph:
   title: "Jonathan Schweder | Senior Backend Engineer"
   type: website

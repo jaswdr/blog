@@ -52,8 +52,8 @@
     "summary" $about.summary
     "location" (dict "city" "Pomerode" "region" "Santa Catarina" "countryCode" "BR")
     "profiles" (slice
-      (dict "network" "GitHub" "username" $author.contactInfo.github "url" (printf "https://github.com/%s" $author.contactInfo.github))
-      (dict "network" "LinkedIn" "username" $author.contactInfo.linkedin "url" (printf "https://linkedin.com/in/%s" $author.contactInfo.linkedin))))
+      (dict "network" "GitHub" "username" $author.contactInfo.github "url" $author.contactInfo.githubUrl)
+      (dict "network" "LinkedIn" "username" $author.contactInfo.linkedin "url" $author.contactInfo.linkedinUrl)))
   "work" $work
   "education" $education
   "certificates" $certs

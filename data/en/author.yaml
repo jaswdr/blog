@@ -1,6 +1,9 @@
 name: "Jonathan Schweder"
 image: "images/me.webp"
 contactInfo:
-  email: "me@jaswdr.dev"
+  email: "website@jaswdr.dev"
   github: jaswdr
   linkedin: jaswdr
+  # Stable short links (same pattern as site.customMenus CV url)
+  githubUrl: https://link.jaswdr.dev/github
+  linkedinUrl: https://link.jaswdr.dev/linkedin
