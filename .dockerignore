@@ -11,6 +11,10 @@ Thumbs.db
 Dockerfile
 .dockerignore
 
+# CI/deploy metadata (not needed in the image)
+.woodpecker.yml
+docker-compose.yml
+
 # Scripts
 scripts/
 

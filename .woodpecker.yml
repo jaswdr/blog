@@ -1,0 +1,31 @@
+# Build on every push to master and every PR; deploy only on master pushes.
+# Built-in skip: [SKIP CI] / [CI SKIP] in the commit message.
+when:
+  - event: push
+    branch: master
+  - event: pull_request
+
+steps:
+  # Tag by SHA so PR builds never overwrite the production :latest tag on the
+  # host daemon (the Woodpecker agent builds directly on it via docker.sock).
+  - name: build
+    image: docker:27-cli
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - docker build -t jaschweder/blog:${CI_COMMIT_SHA} .
+
+  - name: deploy
+    image: docker:27-cli
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - docker tag jaschweder/blog:${CI_COMMIT_SHA} jaschweder/blog:latest
+      # Project name must stay "duckrent": keeps the duckrent-website-1
+      # container name that Traefik routing and Grafana container alerts match.
+      - docker compose --project-name duckrent up -d --no-deps website
+    depends_on:
+      - build
+    when:
+      - event: push
+        branch: master

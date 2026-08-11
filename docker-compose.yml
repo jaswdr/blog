@@ -1,0 +1,31 @@
+# Definition of the website service (jaswdr.dev) deployed by .woodpecker.yml.
+# Lives here (not in the duckrent compose file) so this repo owns its deploys.
+# Runs inside the existing "duckrent" compose project on the host.
+services:
+  website:
+    image: jaschweder/blog:latest
+    restart: unless-stopped
+    networks:
+      - frontend
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+    healthcheck:
+      test: ["CMD-SHELL", "/usr/bin/curl http://localhost:80 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.website.rule=Host(`jaswdr.dev`)"
+      - "traefik.http.routers.website.entrypoints=websecure"
+      - "traefik.http.routers.website.tls=true"
+      - "traefik.http.services.website.loadbalancer.server.port=80"
+
+networks:
+  frontend:
+    external: true
+    name: duckrent_frontend
