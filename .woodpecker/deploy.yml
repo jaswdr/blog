@@ -14,7 +14,8 @@ steps:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker build -t jaschweder/blog:${CI_COMMIT_SHA} .
+      # --pull: always start from the freshest base image (OS package fixes).
+      - docker build --pull -t jaschweder/blog:${CI_COMMIT_SHA} .
 
   - name: deploy
     image: docker:27-cli

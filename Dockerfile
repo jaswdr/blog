@@ -28,6 +28,11 @@ RUN hugo --baseURL https://jaswdr.dev --cleanDestinationDir --minify
 # Production stage (unprivileged: master process runs as the nginx user, listens on 8080)
 FROM nginxinc/nginx-unprivileged:1.27-alpine
 
+# Pick up OS package fixes published after the base image was cut.
+USER root
+RUN apk upgrade --no-cache
+USER nginx
+
 COPY --from=builder /project/public /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY security-headers.conf /etc/nginx/security-headers.conf
