@@ -12,7 +12,7 @@ Dockerfile
 .dockerignore
 
 # CI/deploy metadata (not needed in the image)
-.woodpecker.yml
+.woodpecker/
 docker-compose.yml
 
 # Scripts
